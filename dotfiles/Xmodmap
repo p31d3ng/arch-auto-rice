@@ -1,0 +1,18 @@
+keycode 51 = BackSpace
+keycode 22 = backslash bar
+
+
+clear lock
+clear control
+clear mod4
+clear mod1
+remove shift = Shift_R
+keysym Caps_Lock = Control_L
+keysym Alt_L = Control_L
+keysym Alt_R = Super_R
+keysym Super_L = Alt_L
+keysym Control_L = Super_L
+keysym Shift_R = Alt_R
+add control = Control_L Control_R
+add mod4 = Super_L Super_R
+add mod1 = Alt_L

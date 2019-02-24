@@ -1,0 +1,216 @@
+[bar/i3wmthemer_bar]
+width = 100%
+height = 48
+radius = 0
+fixed-center = true
+dpi = 220
+
+background = #1d1e26
+foreground = #b0b287
+
+line-size = 3
+line-color =
+
+border-size = 0
+border-color =
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = "Source Code Pro Semibold:size=10;1"
+font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
+font-2 = "Font Awesome 5 Brands:size=10;1"
+
+modules-left = wlan eth backlight
+modules-center = date i3
+modules-right = alsa battery memory cpu temperature powermenu
+
+tray-position = right
+tray-maxsize = 45
+;tray-padding =
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #1d1e26
+label-mode-background = #1d1e26
+
+label-focused = %index%
+label-focused-background = #789073
+label-focused-foreground = #ffffff
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-background = #789073
+label-unfocused-foreground = #1d1e26
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-background = #789073
+label-visible-foreground = #1d1e26
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-background = #BA2922
+label-urgent-padding = 2
+
+[module/wlan]
+type = internal/network
+interface = wlp107s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = #1d1e26
+format-connected-background = #789073
+format-connected-padding = 2
+label-connected = %essid%
+
+format-disconnected =
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = #1d1e26
+
+[module/eth]
+type = internal/network
+interface = enp0s3
+interval = 3.0
+
+format-connected-padding = 2
+format-connected-foreground = #1d1e26
+format-connected-background = #789073
+format-connected-prefix = " "
+format-connected-prefix-foreground = #1d1e26
+label-connected = %local_ip%
+
+format-disconnected =
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = " %b-%d-%Y"
+date-alt =
+
+time = %H:%M:%S
+time-alt = %H:%M
+
+
+format-prefix = 
+format-foreground = #1d1e26
+format-background = #789073
+format-padding = 2
+
+label = %date% %time%
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = #789073
+label-close =  cancel
+label-close-foreground = #789073
+label-separator = |
+label-separator-foreground = #789073
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = log off
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = log off
+menu-3-0-exec = pkill -KILL -u $USER
+menu-3-1 = cancel
+menu-3-1-exec = menu-open-0
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <ramp>
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ADP1
+format-charging = <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = Charging %percentage%%
+label-discharging = %percentage%%
+label-full = Fully charged
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/alsa]
+type = internal/alsa
+format-volume = <label-volume>
+label-muted = muted
+label-muted-foreground = #66
+label-volume = Vol %percentage%%
+
+[module/cpu]
+type = internal/cpu
+format = <label>
+label = CPU %percentage%%
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM %gb_used%
+
+; Only applies if <bar-used> is used
+bar-used-indicator =
+bar-used-width = 5
+bar-used-foreground-0 = #55aa55
+bar-used-foreground-1 = #557755
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ff5555
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = #444444
+
+[module/temperature]
+type = internal/temperature
+
+[settings]
+screenchange-reload = true
+[global/wm]
+margin-top = 0
+margin-bottom = 0
