@@ -1,4 +1,3 @@
-go
 python
 python-pip
 xorg-server
@@ -9,10 +8,7 @@ nitrogen
 rxvt-unicode
 adobe-source-code-pro-fonts
 ttf-font-awesome
-gcc
-make
 lxdm
-base-devel
 jsoncpp
 ranger
 feh

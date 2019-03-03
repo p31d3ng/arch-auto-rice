@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # THIS SCRIPT NEED TO RUN UNDER ROOT AFTER CLEAN ARCH INSTALLATION
-# update arch
-pacmac -Syu --noconfirm
+# update arch 
+pacman -Syu --noconfirm
 pacman -S git --noconfirm
 pacman -S sudoer --noconfirm
-pacman -S yay --noconfirm
-yay -Syu --noconfirm
+pacman -S base-devel --noconfirm
+pacman -S go --noconfirm
 
 # create sudo group
 read -p "Group for sudoers(default: super): " group_name
@@ -34,16 +34,18 @@ else
 	passwd "$username"
 fi
 
-# install required packages
-while IFS='' read -r line || [[ -n "$line" ]]; do
-	echo "Installing $line"
-	pacman -S $line --noconfirm
-done < ./required-packages
+# drop root and install yay
+echo "Switching to user ${username}..."
+su - ${username}
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+yay -Syu --noconfirm
 
-while IFS='' read -r line || [[ -n "$line" ]]; do
-	echo "Installing $line"
-	yay -S $line --noconfirm
-done < ./yay-packages
+# install required packages
+pacman -S $(cat ./required-packages | tr '\n' ' ') --noconfirm
+yay -S $(cat ./aur-packages | tr '\n' ' ') --noconfirm
 
 # install config files via go script
 cd /tmp
