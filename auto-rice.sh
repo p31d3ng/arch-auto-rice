@@ -40,4 +40,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 done < ./required-packages
 
 # install config files via go script
+cd /tmp
+git clone https://github.com/p31d3ng/arch-auto-rice.git
+cd arch-auto-rice
 go run go-install-configs.go

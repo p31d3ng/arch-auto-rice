@@ -5,7 +5,8 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer)
 
 ## Dependencies (Will check during installation)
 
-- python3
+- go
+- python3 & pip3
 - i3-gaps
 - polybar
 - rofi
@@ -17,4 +18,4 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer)
 
 ## Usage
 
-curl -O blablabla; ./auto-rice.sh
+curl https://bit.ly/p31d3ng-ricing -O auto-rice.sh; ./auto-rice.sh
