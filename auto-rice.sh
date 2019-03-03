@@ -9,7 +9,7 @@ pacman -S base-devel --noconfirm
 pacman -S go --noconfirm
 
 # create sudo group
-read -p "Group for sudoers(default: super): " group_name
+read -p "Adding new group for sudoers(default: super): " group_name
 group_name=${group_name:-super}
 super_group_exist=$(cut -d: -f1 /etc/group | grep "super" | wc -l)
 if [[ ${super_group_exist} -eq 0 ]]; then
@@ -35,20 +35,21 @@ else
 fi
 
 # drop root and install yay
-echo "Switching to user ${username}..."
-su - ${username}
-git clone https://aur.archlinux.org/yay.git
+cd /tmp
+rm -rf yay
+su -c "git clone https://aur.archlinux.org/yay.git" ${username}
 cd yay
-makepkg -si
+su -c "makepkg -si --noconfirm" ${username}
 cd ..
-yay -Syu --noconfirm
+su -c "yay -Syu --noconfirm" ${username}
+
+# clone the main repo
+git clone https://github.com/p31d3ng/arch-auto-rice.git
+cd arch-auto-rice
 
 # install required packages
 pacman -S $(cat ./required-packages | tr '\n' ' ') --noconfirm
-yay -S $(cat ./aur-packages | tr '\n' ' ') --noconfirm
+su -c "yay -S $(cat ./aur-packages | tr '\n' ' ') --noconfirm" ${username}
 
 # install config files via go script
-cd /tmp
-git clone https://github.com/p31d3ng/arch-auto-rice.git
-cd arch-auto-rice
 go run go-install-configs.go
