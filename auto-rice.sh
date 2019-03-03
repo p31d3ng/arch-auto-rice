@@ -6,6 +6,7 @@ pacmac -Syu --noconfirm
 pacman -S git --noconfirm
 pacman -S sudoer --noconfirm
 pacman -S yay --noconfirm
+yay -Syu --noconfirm
 
 # create sudo group
 read -p "Group for sudoers(default: super): " group_name
@@ -38,6 +39,11 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 	echo "Installing $line"
 	pacman -S $line --noconfirm
 done < ./required-packages
+
+while IFS='' read -r line || [[ -n "$line" ]]; do
+	echo "Installing $line"
+	yay -S $line --noconfirm
+done < ./yay-packages
 
 # install config files via go script
 cd /tmp

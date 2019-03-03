@@ -4,8 +4,13 @@ python-pip
 xorg-server
 xorg-xrdb
 xorg-xrandr
+i3-gaps
+nitrogen
 rxvt-unicode
 adobe-source-code-pro-fonts
+ttf-font-awesome
+gcc
+make
 lxdm
 base-devel
 jsoncpp
