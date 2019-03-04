@@ -18,4 +18,4 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer)
 
 ## Usage
 
-`curl -L https://bit.ly/p31d3ng-ricing | sh`
+`curl -L https://bit.ly/p31d3ng-ricing -o auto-rice.sh | sh auto-rice.sh`
