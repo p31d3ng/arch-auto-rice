@@ -1,0 +1,56 @@
+--- # compponents and their config locations
+- components:
+  - i3-gaps:
+    - action: replace
+    - config_loc: ~/.config/i3/config
+    - ref_loc: dotfiles/files/i3_config
+  
+  - Xmodmap:
+    - action: replace
+    - config_loc: ~/.Xmodmap
+    - ref_loc: dotfiles/files/Xmodmap
+
+  - Xresources:
+    - action: append
+    - config_loc: ~/.Xresources
+    - ref_loc: dotfiles/files/Xresources
+
+  - fish-alias:
+      - action: replace
+      - config_loc: ~/.config/fish/alias_abbr.fish
+      - ref_loc: dotfiles/files/fish_alias_abbr.fish
+
+  - fish-config:
+    - action: append
+    - config_loc: ~/.config/fish/config.fish
+    - ref_loc: dotfiles/files/fish_config.fish
+
+  - gtk3-settings:
+    - action: append
+    - config_loc: ~/.config/gtk-3.0/settings.ini
+    - ref_loc: dotfiles/files/gtk_settings.ini
+
+  - gtk4-settings:
+    - action: append
+    - config_loc: ~/.config/gtk-4.0/settings.ini
+    - ref_loc: dotfiles/files/gtk_settings.ini
+
+  - polybar:
+    - action: replace
+    - config_loc: ~/.config/polybar/config
+    - ref_loc: dotfiles/files/polybar_config
+
+  - rofi:
+    - action: replace
+    - config_loc: ~/.config/rofi/config.rasi
+    - ref_loc: dotfiles/files/rofi_config.rasi
+  
+  - vscode-keybindings:
+    - action: insert_json
+    - config_loc: ~/.config/Code/User/keybindings.json
+    - ref_loc: dotfiles/files/vscode_keybindings.json
+  
+  - vscode-settings:
+    - action: insert_json
+    - config_loc: ~/.config/Code/User/settings.json
+    - ref_loc: dotfiles/files/vscode_settings.json
