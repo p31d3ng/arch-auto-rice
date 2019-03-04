@@ -4,7 +4,9 @@
 
 # create sudo group
 pacman -S sudo --noconfirm
+echo "----------------------------------------------------------------------"
 read -p "Adding new group for sudoers(default: super): " group_name
+echo "----------------------------------------------------------------------"
 group_name=${group_name:-super}
 super_group_exist=$(cut -d: -f1 /etc/group | grep "super" | wc -l)
 if [[ ${super_group_exist} -eq 0 ]]; then
@@ -16,7 +18,9 @@ else
 fi
 
 # create sudo user
+echo "----------------------------------------------------------------------"
 read -p "Username: " username
+echo "----------------------------------------------------------------------"
 user_exist=$(cut -d: -f1 /etc/passwd | grep "$username" | wc -l)
 if [[ ${user_exist} -gt 0 ]]; then
 	echo "User exist, adding to super group"
