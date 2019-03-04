@@ -16,6 +16,20 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer)
 - rxvt-unicode
 - lxdm
 
+## Optional Dev Apps
+
+- VS Code
+- Fish shell
+- Oh My Fish
+
+## To-Do
+
+- [ ] Xresources file
+- [ ] script to put all configs in place based on VM or Laptop
+- [ ] VS Code configs for Go dev env
+- [ ] Browsers (Chrome & Firefox)
+- [ ] go tool to change theme like i3wm-themer
+
 ## Usage
 
 `curl -L https://bit.ly/p31d3ng-ricing -o auto-rice.sh && sh auto-rice.sh`
