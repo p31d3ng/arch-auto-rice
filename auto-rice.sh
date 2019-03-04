@@ -3,7 +3,7 @@
 # THIS SCRIPT NEED TO RUN UNDER ROOT AFTER CLEAN ARCH INSTALLATION
 
 # create sudo group
-pacman -S sudoer --noconfirm
+pacman -S sudo --noconfirm
 read -p "Adding new group for sudoers(default: super): " group_name
 group_name=${group_name:-super}
 super_group_exist=$(cut -d: -f1 /etc/group | grep "super" | wc -l)
@@ -32,7 +32,6 @@ fi
 # update arch 
 pacman -Syu --noconfirm
 pacman -S git --noconfirm
-pacman -S sudoer --noconfirm
 pacman -S base-devel --noconfirm
 pacman -S go --noconfirm
 
