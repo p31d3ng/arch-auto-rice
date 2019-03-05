@@ -1,0 +1,1 @@
+[ -f ~/.config/fish/alias_abbr.fish ] && . ~/.config/fish/alias_abbr.fish

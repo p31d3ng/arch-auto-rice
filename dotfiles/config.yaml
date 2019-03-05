@@ -46,7 +46,7 @@
     - ref_loc: dotfiles/files/rofi_config.rasi
   
   - vscode-keybindings:
-    - action: insert_json
+    - action: replace
     - config_loc: ~/.config/Code/User/keybindings.json
     - ref_loc: dotfiles/files/vscode_keybindings.json
   
