@@ -1,13 +1,12 @@
 set $mod Mod4
 
-new_window pixel 1
+new_window none
 new_float normal
 
 hide_edge_borders none
 
 bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+bindsym $mod+y border normal
 
 font xft:URWGothic-Book 11
 
