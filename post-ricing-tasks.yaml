@@ -1,7 +1,7 @@
 ---
   - name: xorg-config
     description: install xorg config for my laptop
-    enable: true
+    enable: false
     scripts:
       - loc: "tasks/install_xorg_conf.sh"
         type: bash
@@ -10,7 +10,7 @@
       
   - name: optional-official-pkgs
     description: install optional pkgs from pacman
-    enable: false
+    enable: true
     scripts: 
       - loc: "tasks/install_optional_official_pkgs.sh"
         type: bash
@@ -19,7 +19,7 @@
 
   - name: optional-aur-pkgs
     description: install optional pkgs from yay
-    enable: false
+    enable: true
     scripts: 
       - loc: "tasks/install_optional_aur_pkgs.sh"
         type: bash
@@ -28,7 +28,7 @@
 
   - name: "fish-deps"
     description: install oh-my-fish and config fish shell
-    enable: false
+    enable: true
     depends:
       - optional-official-pkgs
     scripts: 
@@ -36,12 +36,10 @@
         type: fish
         params: 
           - "packages/omf-packages"
-      - loc: "tasks/config_fish.sh"
-        type: bash
   
   - name: "vscode-go-deps"
     description: install dependencies for vscode go ext
-    enable: false
+    enable: true
     scripts: 
       - loc: "tasks/install_vscode_go_deps.sh"
         type: bash
