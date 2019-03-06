@@ -53,3 +53,8 @@
     action: insert_json
     config_loc: ~/.config/Code/User/settings.json
     ref_loc: vscode_settings.json
+  
+  - name: "bashrc"
+    action: append
+    config_loc: ~/.bashrc
+    ref_loc: bashrc

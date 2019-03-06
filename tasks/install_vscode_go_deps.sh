@@ -5,4 +5,5 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 done < "$1"
 
 export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 gometalinter --install
