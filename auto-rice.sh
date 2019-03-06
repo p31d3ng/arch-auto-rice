@@ -41,7 +41,7 @@ pacman -S base-devel --noconfirm
 pacman -S go --noconfirm
 
 # enable dhcp & ntpd at boot time
-systemctl enable dhcp
+systemctl enable dhcpd
 ntp -gq
 systemctl enable ntpd
 systemctl start ntpd
