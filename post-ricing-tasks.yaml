@@ -43,7 +43,6 @@
     depends:
       - optional-official-pkgs
       - optional-aur-pkgs
-      - fish-deps
     scripts: 
       - loc: "tasks/install_dotfiles.go"
         type: go
