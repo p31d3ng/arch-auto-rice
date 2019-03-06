@@ -12,7 +12,9 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-type tasks []struct {
+type tasks []taskStruct
+
+type taskStruct struct {
 	Name        string
 	Description string
 	Type        string
@@ -50,14 +52,14 @@ func main() {
 	var ts tasks
 	err = yaml.Unmarshal(b, &ts)
 	check(err, "Cannot unmarshall yaml config")
-	runMap := make(map[string]bool)
+	runMap := make(map[string]int)
 	// get enable status of all tasks
-	for _, t := range ts {
-		run := t.Enable
-		if run {
+	for i, t := range ts {
+		run := -1
+		if t.Enable {
 			for _, s := range t.Scripts {
-				if _, err := os.Stat(pwd + "/" + s.Loc); os.IsNotExist(err) {
-					run = false
+				if _, err := os.Stat(pwd + "/" + s.Loc); err == nil {
+					run = i
 				}
 			}
 		}
@@ -68,20 +70,28 @@ func main() {
 	fmt.Printf("\n-----------------")
 	fmt.Printf("The following tasks will run:")
 	fmt.Println("-----------------")
+	exitFlag := false
 	for _, t := range ts {
 		for _, dName := range t.Depends {
-			if v, ok := runMap[dName]; !ok || !v {
-				runMap[t.Name] = false
+			if v, ok := runMap[dName]; !ok || v < 0 {
+				runMap[t.Name] = -1
 				break
+			} else if v > -1 && runMap[t.Name] > -1 && v > runMap[t.Name] {
+				fmt.Printf("[ERROR] Please define \"%v\" before \"%v\", I don't want to deal with topological sort at the moment :(\n", dName, t.Name)
+				exitFlag = true
 			}
 		}
-		if runMap[t.Name] {
+		if runMap[t.Name] > -1 && !exitFlag {
 			fmt.Println("*", t.Name)
 		}
 	}
 
+	if exitFlag {
+		os.Exit(1)
+	}
+
 	for _, t := range ts {
-		if runMap[t.Name] {
+		if runMap[t.Name] > -1 {
 			fmt.Printf("\n-----------------")
 			fmt.Printf("Running " + t.Name)
 			fmt.Println("-----------------")
