@@ -34,6 +34,11 @@
     config_loc: ~/.config/gtk-4.0/settings.ini
     ref_loc: gtk_settings.ini
 
+  - name: "gtk5-settings"
+    action: append
+    config_loc: ~/.config/gtk-5.0/settings.ini
+    ref_loc: gtk_settings.ini
+
   - name: "polybar"
     action: replace
     config_loc: ~/.config/polybar/config
