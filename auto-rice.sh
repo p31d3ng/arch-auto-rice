@@ -4,7 +4,7 @@
 
 set -e # fail the script if any command fails
 # create sudo group
-pacman -S sudo --noconfirm
+pacman -S sudo --noconfirm --needed
 echo "----------------------------------------------------------------------"
 read -p "Adding new group for sudoers(default: super): " group_name
 echo "----------------------------------------------------------------------"
@@ -35,12 +35,12 @@ else
 fi
 
 # update arch 
-pacman -Syu --noconfirm
-pacman -S ntp --noconfirm
-pacman -S dhcp --noconfirm
-pacman -S git --noconfirm
-pacman -S base-devel --noconfirm
-pacman -S go --noconfirm
+pacman -Syu --noconfirm --needed
+pacman -S ntp --noconfirm --needed
+pacman -S dhcp --noconfirm --needed
+pacman -S git --noconfirm --needed
+pacman -S base-devel --noconfirm --needed
+pacman -S go --noconfirm --needed
 
 # enable dhcp & ntpd at boot time
 systemctl enable dhcpcd
@@ -62,7 +62,7 @@ git clone https://github.com/p31d3ng/arch-auto-rice.git
 cd arch-auto-rice
 
 # install required packages
-pacman -S $(cat ./packages/required-official-packages | tr '\n' ' ') --noconfirm
+pacman -S $(cat ./packages/required-official-packages | tr '\n' ' ') --noconfirm --needed
 su -c "yay -S $(cat ./packages/required-aur-packages | tr '\n' ' ') --noconfirm" ${username}
 su -c "go get -u gopkg.in/yaml.v2" ${username}
 
