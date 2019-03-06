@@ -53,8 +53,20 @@ git clone https://github.com/p31d3ng/arch-auto-rice.git
 cd arch-auto-rice
 
 # install required packages
-pacman -S $(cat ./packages/required-packages | tr '\n' ' ') --noconfirm
-su -c "yay -S $(cat .packages/aur-packages | tr '\n' ' ') --noconfirm" ${username}
+pacman -S $(cat ./packages/required-official-packages | tr '\n' ' ') --noconfirm
+su -c "yay -S $(cat .packages/required-aur-packages | tr '\n' ' ') --noconfirm" ${username}
+go get -u gopkg.in/yaml.v2
 
-# install config files via go script
-go run go-install-configs.go
+# create sudo user
+echo "----------------------------------------------------------------------"
+echo "Congratulation! auto-ricing finished!"
+read -p "Do you want to proceed to install/config optional packages? (Y/n): " selection
+echo "----------------------------------------------------------------------"
+
+if [[ $(echo "$selection" | tr '[:upper:]' '[:lower:]') = "y" ]]; then
+	# install config files via go script
+	go run post-ricing.go post-ricing-tasks.yaml
+else 
+	echo "You choose not to proceed, but if you changed your mind, you can always run:"
+	echo "go run post-rucing.go post-ricing-tasks.yaml"
+fi
