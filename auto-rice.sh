@@ -42,7 +42,9 @@ pacman -S go --noconfirm
 
 # enable dhcp & ntpd at boot time
 systemctl enable dhcp
+ntp -gq
 systemctl enable ntpd
+systemctl start ntpd
 
 # drop root and install yay
 cd /tmp
