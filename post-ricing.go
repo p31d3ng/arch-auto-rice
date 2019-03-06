@@ -99,7 +99,7 @@ func main() {
 				var cmd *exec.Cmd
 				scriptLoc := pwd + "/" + s.Loc
 				paramStr := strings.Join(s.Params, " ")
-				if t.Type == "bash" {
+				if t.Type == "bash" || t.Type == "fish" {
 					cmd = exec.Command(scriptLoc, paramStr)
 				} else if t.Type == "go" {
 					cmd = exec.Command("go run "+scriptLoc, paramStr)
@@ -114,12 +114,11 @@ func main() {
 				err := cmd.Start()
 				check(err, "In "+t.Name+" - "+s.Loc)
 
-				defer cmd.Wait()
 				go io.Copy(os.Stdout, stdout)
 				go io.Copy(os.Stderr, stderr)
-
+				cmd.Wait()
 			}
-			fmt.Printf("\n-----------------")
+			fmt.Printf("-----------------")
 			fmt.Printf("Finished " + t.Name)
 			fmt.Println("-----------------")
 		}
@@ -132,5 +131,5 @@ func main() {
 }
 
 func printUsage() {
-	fmt.Printf("Usage: go run %v post-ricing-tasks.yaml\n", os.Args[0])
+	fmt.Printf("Usage: go run post-ricing.go post-ricing-tasks.yaml\n")
 }

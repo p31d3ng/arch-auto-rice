@@ -11,7 +11,7 @@
   - name: optional-official-pkgs
     description: install optional pkgs from pacman
     type: bash
-    enable: true
+    enable: false
     scripts: 
       - loc: "tasks/install_optional_official_pkgs.sh"
         params:
@@ -20,7 +20,7 @@
   - name: optional-aur-pkgs
     description: install optional pkgs from yay
     type: bash
-    enable: true
+    enable: false
     scripts: 
       - loc: "tasks/install_optional_aur_pkgs.sh"
         params: 
@@ -28,12 +28,12 @@
 
   - name: "fish-deps"
     description: install oh-my-fish and config fish shell
-    type: bash
-    enable: true
+    type: fish
+    enable: false
     depends:
       - optional-official-pkgs
     scripts: 
-      - loc: "tasks/install_fish_deps.sh"
+      - loc: "tasks/install_fish_deps.fish"
         params: 
           - "packages/omf-packages"
   
