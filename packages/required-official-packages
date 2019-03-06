@@ -3,6 +3,7 @@ python-pip
 xorg-server
 xorg-xrdb
 xorg-xrandr
+xorg-xmodmap
 i3-gaps
 nitrogen
 rxvt-unicode
