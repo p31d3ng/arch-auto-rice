@@ -37,6 +37,7 @@ fi
 # update arch 
 pacman -Syu --noconfirm
 pacman -S ntp --noconfirm
+pacman -S dhcp --noconfirm
 pacman -S git --noconfirm
 pacman -S base-devel --noconfirm
 pacman -S go --noconfirm
