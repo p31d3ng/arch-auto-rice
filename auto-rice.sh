@@ -35,9 +35,14 @@ fi
 
 # update arch 
 pacman -Syu --noconfirm
+pacman -S ntp --noconfirm
 pacman -S git --noconfirm
 pacman -S base-devel --noconfirm
 pacman -S go --noconfirm
+
+# enable dhcp & ntpd at boot time
+systemctl enable dhcp
+systemctl enable ntpd
 
 # drop root and install yay
 cd /tmp
