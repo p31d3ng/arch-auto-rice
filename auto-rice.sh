@@ -2,6 +2,7 @@
 
 # THIS SCRIPT NEED TO RUN UNDER ROOT AFTER CLEAN ARCH INSTALLATION
 
+set -e # fail the script if any command fails
 # create sudo group
 pacman -S sudo --noconfirm
 echo "----------------------------------------------------------------------"
