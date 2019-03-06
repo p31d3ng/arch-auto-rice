@@ -1,65 +1,66 @@
 ---
   - name: xorg-config
     description: install xorg config for my laptop
-    type: bash
     enable: true
     scripts:
       - loc: "tasks/install_xorg_conf.sh"
+        type: bash
         params:
           - "xorg.conf.d/"
       
   - name: optional-official-pkgs
     description: install optional pkgs from pacman
-    type: bash
     enable: false
     scripts: 
       - loc: "tasks/install_optional_official_pkgs.sh"
+        type: bash
         params:
           - "packages/optional-official-packages"
 
   - name: optional-aur-pkgs
     description: install optional pkgs from yay
-    type: bash
     enable: false
     scripts: 
       - loc: "tasks/install_optional_aur_pkgs.sh"
+        type: bash
         params: 
           - "packages/optional-aur-packages"
 
   - name: "fish-deps"
     description: install oh-my-fish and config fish shell
-    type: fish
     enable: false
     depends:
       - optional-official-pkgs
     scripts: 
       - loc: "tasks/install_fish_deps.fish"
+        type: fish
         params: 
           - "packages/omf-packages"
+      - loc: "tasks/config_fish.sh"
+        type: bash
   
   - name: "vscode-go-deps"
     description: install dependencies for vscode go ext
-    type: bash
     enable: false
     scripts: 
       - loc: "tasks/install_vscode_go_deps.sh"
+        type: bash
         params: 
           - "packages/go-packages"
   
   - name: "vscode-exts"
     description: install extentions for VS Code
-    type: bash
     enable: true
     depends:
       - optional-aur-pkgs
     scripts: 
       - loc: "tasks/install_vscode_exts.sh"
+        type: bash
         params: 
           - "packages/vscode-exts"
   
   - name: "dotfiles-install"
-    description: install dotfiles to correct location
-    type: go
+    description: install dotfiles to correct location    
     enable: true
     depends:
       - optional-official-pkgs
@@ -68,5 +69,6 @@
       - vscode-exts
     scripts: 
       - loc: "tasks/install_dotfiles.go"
+        type: go
         params: 
           - "dotfiles/"

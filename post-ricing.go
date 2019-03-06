@@ -17,11 +17,11 @@ type tasks []taskStruct
 type taskStruct struct {
 	Name        string
 	Description string
-	Type        string
 	Enable      bool
 	Depends     []string
 	Scripts     []struct {
 		Loc    string
+		Type   string
 		Params []string
 	}
 }
@@ -47,7 +47,6 @@ func main() {
 	check(err, "Cannot read yaml config")
 
 	pwd, _ := os.Getwd()
-	fmt.Println(pwd)
 
 	var ts tasks
 	err = yaml.Unmarshal(b, &ts)
@@ -58,8 +57,16 @@ func main() {
 		run := -1
 		if t.Enable {
 			for _, s := range t.Scripts {
+				if len(s.Type) == 0 {
+					log.Printf("[INFO] %v | %v - Missing runtime type! skipping \"%v\"\n", t.Name, s.Loc, t.Name)
+					run = -1
+					break
+				}
 				if _, err := os.Stat(pwd + "/" + s.Loc); err == nil {
 					run = i
+				} else if os.IsNotExist(err) {
+					run = -1
+					break
 				}
 			}
 		}
@@ -99,14 +106,14 @@ func main() {
 				var cmd *exec.Cmd
 				scriptLoc := pwd + "/" + s.Loc
 				paramStr := strings.Join(s.Params, " ")
-				if t.Type == "bash" || t.Type == "fish" {
+				if s.Type == "bash" || s.Type == "fish" {
 					cmd = exec.Command(scriptLoc, paramStr)
-				} else if t.Type == "go" {
+				} else if s.Type == "go" {
 					cmd = exec.Command("go run "+scriptLoc, paramStr)
-				} else if t.Type == "python3" {
+				} else if s.Type == "python3" {
 					cmd = exec.Command("python3 "+scriptLoc, paramStr)
 				} else {
-					log.Printf("[INFO] Runtime \"%v\" not supported yet!\n", t.Type)
+					log.Printf("[INFO] Runtime \"%v\" not supported yet!\n", s.Type)
 					continue
 				}
 				stdout, _ := cmd.StdoutPipe()
