@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo pacman -S "$(cat $1 | tr '\n' ' ') --noconfirm"
+sudo pacman -S "$(cat $1 | tr '\n' ' ')" --noconfirm
