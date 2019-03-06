@@ -65,7 +65,7 @@ echo "----------------------------------------------------------------------"
 
 if [[ $(echo "$selection" | tr '[:upper:]' '[:lower:]') = "y" ]]; then
 	# install config files via go script
-	go run post-ricing.go post-ricing-tasks.yaml
+	su -c "go run post-ricing.go post-ricing-tasks.yaml" ${username}
 else 
 	echo "You choose not to proceed, but if you changed your mind, you can always run:"
 	echo "go run post-rucing.go post-ricing-tasks.yaml"
