@@ -37,6 +37,19 @@
         params: 
           - "packages/omf-packages"
   
+  - name: "dotfiles-install"
+    description: install dotfiles to correct location    
+    enable: true
+    depends:
+      - optional-official-pkgs
+      - optional-aur-pkgs
+      - fish-deps
+    scripts: 
+      - loc: "tasks/install_dotfiles.go"
+        type: go
+        params: 
+          - "dotfiles/"
+          
   - name: "vscode-go-deps"
     description: install dependencies for vscode go ext
     enable: true
@@ -48,7 +61,7 @@
   
   - name: "vscode-exts"
     description: install extentions for VS Code
-    enable: true
+    enable: false # has to run under GUI env
     depends:
       - optional-aur-pkgs
     scripts: 
@@ -56,17 +69,3 @@
         type: bash
         params: 
           - "packages/vscode-exts"
-  
-  - name: "dotfiles-install"
-    description: install dotfiles to correct location    
-    enable: true
-    depends:
-      - optional-official-pkgs
-      - optional-aur-pkgs
-      - fish-deps
-      - vscode-exts
-    scripts: 
-      - loc: "tasks/install_dotfiles.go"
-        type: go
-        params: 
-          - "dotfiles/"
