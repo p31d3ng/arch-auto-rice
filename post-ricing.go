@@ -123,7 +123,8 @@ func main() {
 
 				go io.Copy(os.Stdout, stdout)
 				go io.Copy(os.Stderr, stderr)
-				cmd.Wait()
+				err = cmd.Wait()
+				check(err, "In "+t.Name+" - "+s.Loc)
 			}
 			fmt.Printf("-----------------")
 			fmt.Printf("Finished " + t.Name)

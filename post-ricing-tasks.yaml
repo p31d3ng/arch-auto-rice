@@ -32,6 +32,8 @@
     depends:
       - optional-official-pkgs
     scripts: 
+      - loc: "tasks/install_omf.fish"
+        type: fish
       - loc: "tasks/install_fish_deps.fish"
         type: fish
         params: 
