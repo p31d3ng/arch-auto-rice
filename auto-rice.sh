@@ -59,7 +59,7 @@ cd arch-auto-rice
 
 # install required packages
 pacman -S $(cat ./packages/required-official-packages | tr '\n' ' ') --noconfirm
-su -c "yay -S $(cat .packages/required-aur-packages | tr '\n' ' ') --noconfirm" ${username}
+su -c "yay -S $(cat ./packages/required-aur-packages | tr '\n' ' ') --noconfirm" ${username}
 su -c "go get -u gopkg.in/yaml.v2" ${username}
 
 # create sudo user
