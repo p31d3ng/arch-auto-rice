@@ -1,65 +1,70 @@
 --- # compponents and their config locations
-  - name: "i3-gaps"
-    action: replace
-    config_loc: ~/.config/i3/config
-    ref_loc: i3_config
-  
-  - name: "Xmodmap"
-    action: replace
-    config_loc: ~/.Xmodmap
-    ref_loc: Xmodmap
+- name: "i3-gaps"
+  action: replace
+  config_loc: ~/.config/i3/config
+  ref_loc: i3_config
 
-  - name: "Xresources"
-    action: append
-    config_loc: ~/.Xresources
-    ref_loc: Xresources
+- name: "Xmodmap"
+  action: replace
+  config_loc: ~/.Xmodmap
+  ref_loc: Xmodmap
 
-  - name: "fish-alias"
-    action: replace
-    config_loc: ~/.config/fish/alias_abbr.fish
-    ref_loc: fish_alias_abbr.fish
+- name: "Xresources"
+  action: append
+  config_loc: ~/.Xresources
+  ref_loc: Xresources
 
-  - name: "fish-config"
-    action: append
-    config_loc: ~/.config/fish/config.fish
-    ref_loc: fish_config.fish
+- name: "fish-alias"
+  action: replace
+  config_loc: ~/.config/fish/alias_abbr.fish
+  ref_loc: fish_alias_abbr.fish
 
-  - name: "gtk3-settings"
-    action: append
-    config_loc: ~/.config/gtk-3.0/settings.ini
-    ref_loc: gtk_settings.ini
+- name: "fish-config"
+  action: append
+  config_loc: ~/.config/fish/config.fish
+  ref_loc: fish_config.fish
 
-  - name: "gtk4-settings"
-    action: append
-    config_loc: ~/.config/gtk-4.0/settings.ini
-    ref_loc: gtk_settings.ini
+- name: "gtk3-settings"
+  action: append
+  config_loc: ~/.config/gtk-3.0/settings.ini
+  ref_loc: gtk_settings.ini
 
-  - name: "gtk5-settings"
-    action: append
-    config_loc: ~/.config/gtk-5.0/settings.ini
-    ref_loc: gtk_settings.ini
+- name: "gtk4-settings"
+  action: append
+  config_loc: ~/.config/gtk-4.0/settings.ini
+  ref_loc: gtk_settings.ini
 
-  - name: "polybar"
-    action: replace
-    config_loc: ~/.config/polybar/config
-    ref_loc: polybar_config
+- name: "gtk5-settings"
+  action: append
+  config_loc: ~/.config/gtk-5.0/settings.ini
+  ref_loc: gtk_settings.ini
 
-  - name: "rofi"
-    action: replace
-    config_loc: ~/.config/rofi/config.rasi
-    ref_loc: rofi_config.rasi
-  
-  - name: "vscode-keybindings"
-    action: replace
-    config_loc: ~/.config/Code/User/keybindings.json
-    ref_loc: vscode_keybindings.json
-  
-  - name: "vscode-settings"
-    action: insert_json
-    config_loc: ~/.config/Code/User/settings.json
-    ref_loc: vscode_settings.json
-  
-  - name: "bashrc"
-    action: append
-    config_loc: ~/.bashrc
-    ref_loc: bashrc
+- name: "polybar"
+  action: replace
+  config_loc: ~/.config/polybar/config
+  ref_loc: polybar_config
+
+- name: "rofi"
+  action: replace
+  config_loc: ~/.config/rofi/config.rasi
+  ref_loc: rofi_config.rasi
+
+- name: "vscode-keybindings"
+  action: replace
+  config_loc: ~/.config/Code/User/keybindings.json
+  ref_loc: vscode_keybindings.json
+
+- name: "vscode-settings"
+  action: insert_json
+  config_loc: ~/.config/Code/User/settings.json
+  ref_loc: vscode_settings.json
+
+- name: "bashrc"
+  action: append
+  config_loc: ~/.bashrc
+  ref_loc: bashrc
+
+- name: "vimrc"
+  action: replace
+  config_loc: ~/.vimrc
+  ref_loc: vimrc

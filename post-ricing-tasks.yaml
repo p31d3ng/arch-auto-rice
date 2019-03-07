@@ -58,6 +58,8 @@
 - name: "vim-vundle"
   description: Install Vundle and vimrc
   enable: false
+  depends:
+    - dotfiles-install
   scripts:
     - loc: "tasks/install_vim_vundle.sh"
       params:
