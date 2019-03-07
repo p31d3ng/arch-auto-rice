@@ -36,7 +36,7 @@
 
 - name: "dotfiles-install"
   description: install dotfiles to correct location
-  enable: true
+  enable: false
   depends:
     - optional-official-pkgs
     - optional-aur-pkgs
