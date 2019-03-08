@@ -19,6 +19,7 @@ type actionItem struct {
 	Action    string
 	ConfigLoc string `yaml:"config_loc"`
 	RefLoc    string `yaml:"ref_loc"`
+	SkipForVM bool   `yaml:"skip_for_vm"`
 }
 
 func check(e error, reason string) {
@@ -46,8 +47,11 @@ func main() {
 	var actionItems []actionItem
 	err = yaml.Unmarshal(b, &actionItems)
 	check(err, "Cannot unmarshall yaml config")
-
+	isVM, _ := runBash("facter", "is_virtual")
 	for _, item := range actionItems {
+		if isVM == "true" && item.SkipForVM {
+			continue
+		}
 		fileLoc := pwd + "/files/" + item.RefLoc
 		runBash("bash", "-c", fmt.Sprintf("mkdir -p $(dirname %v)", item.ConfigLoc))
 		switch action := item.Action; action {
