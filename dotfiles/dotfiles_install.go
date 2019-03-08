@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -54,7 +55,9 @@ func main() {
 		case "replace":
 			replaceFile(fileLoc, item.ConfigLoc)
 		case "insert_json":
-			insertContentToJSON(fileLoc, item.ConfigLoc)
+			insertContentToJSON(fileLoc, item.ConfigLoc, true)
+		default:
+			fmt.Println(action, "is not supported yet!")
 		}
 	}
 }
@@ -67,8 +70,33 @@ func replaceFile(fileLoc, configLoc string) {
 	runBash("cp", "-r", fileLoc, configLoc)
 }
 
-func insertContentToJSON(fileLoc, configLoc string) {
+func insertContentToJSON(fileLoc, configLoc string, inline bool) string {
 	fmt.Println(fileLoc, configLoc)
+
+	var appendContent []interface{}
+	bf, err := ioutil.ReadFile(fileLoc)
+	check(err, "while reading "+fileLoc)
+	err = json.Unmarshal(bf, &appendContent)
+	check(err, "while unmarshalling "+fileLoc)
+
+	var orginalContent []interface{}
+	bc, err := ioutil.ReadFile(configLoc)
+	check(err, "while reading "+configLoc)
+	err = json.Unmarshal(bc, &orginalContent)
+	check(err, "while unmarshalling "+configLoc)
+
+	newContent := append([]interface{}{}, orginalContent...)
+	for _, c := range appendContent {
+		newContent = append(newContent, c)
+	}
+	bytesContent, err := json.MarshalIndent(newContent, "", "  ")
+	check(err, "while marshalling to "+configLoc)
+
+	if !inline {
+		return string(bytesContent)
+	}
+	ioutil.WriteFile(configLoc, bytesContent, 0644)
+	return ""
 }
 
 func runBash(cmdStr string, params ...string) (string, string) {
