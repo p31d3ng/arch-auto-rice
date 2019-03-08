@@ -1,15 +1,23 @@
 ---
 - name: xorg-config
   description: install xorg config for my laptop
-  enable: false
+  enable: true
   scripts:
     - loc: "tasks/install_xorg_conf.sh"
       params:
         - "xorg.conf.d/"
 
+- name: dpi-adjust
+  description: remove dpi settings if not 4K
+  enable: true
+  scripts:
+    - loc: "tasks/dpi_adjust.sh"
+      params:
+        - "dotfiles/files"
+
 - name: optional-official-pkgs
   description: install optional pkgs from pacman
-  enable: false
+  enable: true
   scripts:
     - loc: "tasks/install_optional_official_pkgs.sh"
       params:
@@ -17,7 +25,7 @@
 
 - name: optional-aur-pkgs
   description: install optional pkgs from yay
-  enable: false
+  enable: true
   scripts:
     - loc: "tasks/install_optional_aur_pkgs.sh"
       params:
@@ -25,7 +33,7 @@
 
 - name: "fish-deps"
   description: install oh-my-fish and config fish shell
-  enable: false
+  enable: true
   depends:
     - optional-official-pkgs
   scripts:
@@ -36,10 +44,11 @@
 
 - name: "dotfiles-install"
   description: install dotfiles to correct location
-  enable: false
+  enable: true
   depends:
     - optional-official-pkgs
     - optional-aur-pkgs
+    - dpi-adjust
   scripts:
     - loc: "tasks/install_dotfiles.sh"
       params:
@@ -49,7 +58,7 @@
 
 - name: "vscode-go-deps"
   description: install dependencies for vscode go ext
-  enable: false
+  enable: true
   scripts:
     - loc: "tasks/install_vscode_go_deps.sh"
       params:
@@ -57,13 +66,11 @@
 
 - name: "vim-vundle"
   description: Install Vundle and vimrc
-  enable: false
+  enable: true
   depends:
     - dotfiles-install
   scripts:
     - loc: "tasks/install_vim_vundle.sh"
-      params:
-        - "dotfiles/files/vimrc"
 
 - name: "vscode-exts"
   description: install extentions for VS Code

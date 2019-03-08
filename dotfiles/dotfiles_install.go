@@ -71,8 +71,6 @@ func replaceFile(fileLoc, configLoc string) {
 }
 
 func insertContentToJSON(fileLoc, configLoc string, inline bool) string {
-	fmt.Println(fileLoc, configLoc)
-
 	var appendContent []interface{}
 	bf, err := ioutil.ReadFile(fileLoc)
 	check(err, "while reading "+fileLoc)
