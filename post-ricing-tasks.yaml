@@ -1,11 +1,4 @@
 ---
-- name: dpi-adjust
-  description: remove dpi settings if not 4K
-  enable: true
-  scripts:
-    - loc: "tasks/dpi_adjust.sh"
-      params:
-        - "dotfiles/files"
 
 - name: optional-official-pkgs
   description: install optional pkgs from pacman
@@ -22,6 +15,16 @@
     - loc: "tasks/install_optional_aur_pkgs.sh"
       params:
         - "packages/optional-aur-packages"
+
+- name: dpi-adjust
+  description: remove dpi settings if not 4K
+  enable: true
+  depends:
+    - optional-official-pkgs
+  scripts:
+    - loc: "tasks/dpi_adjust.sh"
+      params:
+        - "dotfiles/files"
 
 - name: xorg-config
   description: install xorg config for my laptop
