@@ -2,7 +2,7 @@
 xdpyinfo &> /dev/null
 if [[ "$?" -gt 0 ]]; then
     echo "Cannot open xdpinfo, skipping the setup for now"
-    return
+    exit 0
 fi
 
 if [[ $(xdpyinfo | grep dimensions | awk '/[0-9]+x[0-9]+/{print $2}') = "3840x2160" ]]; then
