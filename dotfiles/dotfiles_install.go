@@ -9,6 +9,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"strings"
 
 	"gopkg.in/yaml.v2"
@@ -63,12 +64,14 @@ func main() {
 }
 
 func appendToFile(fileLoc, configLoc string) {
-	runBash("mkdir", "-p", "$(dirname "+"configLoc)")
+	dirname := filepath.Dir(configLoc)
+	os.MkdirAll(dirname, 0755)
 	runBash("cat", fileLoc, ">>", configLoc)
 }
 
 func replaceFile(fileLoc, configLoc string) {
-	runBash("mkdir", "-p", "$(dirname "+"configLoc)")
+	dirname := filepath.Dir(configLoc)
+	os.MkdirAll(dirname, 0755)
 	runBash("cp", "-r", fileLoc, configLoc)
 }
 
