@@ -1,5 +1,4 @@
 ---
-
 - name: optional-official-pkgs
   description: install optional pkgs from pacman
   enable: true
@@ -15,6 +14,17 @@
     - loc: "tasks/install_optional_aur_pkgs.sh"
       params:
         - "packages/optional-aur-packages"
+
+- name: vm-adjust
+  description: adjust settings if running the script in virtual machine
+  enable: true
+  depends:
+    - optional-official-pkgs
+    - optional-aur-pkgs     
+  scripts:
+    - loc: "tasks/vm_adjust.sh"
+      params:
+        - "dotfiles/files"
 
 - name: "fish-deps"
   description: install oh-my-fish and config fish shell
@@ -33,7 +43,7 @@
   depends:
     - optional-official-pkgs
     - optional-aur-pkgs
-    - dpi-adjust
+    - vm-adjust
   scripts:
     - loc: "tasks/install_dotfiles.sh"
       params:
