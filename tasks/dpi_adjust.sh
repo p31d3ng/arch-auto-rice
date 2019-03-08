@@ -1,4 +1,13 @@
 #!/bin/bash
+
+if $(facter is_virtual); then
+    echo "You're running in VM, remove dpi overrides"
+    sed -i -e '/dpi/d' $1/Xresources
+    sed -i -e '/dpi/d' $1/rofi_config.rasi
+    sed -i -e '/dpi/d' $1/polybar_config
+    return
+fi
+
 xdpyinfo &> /dev/null
 if [[ "$?" -gt 0 ]]; then
     echo "Cannot open xdpinfo, skipping the setup for now"
