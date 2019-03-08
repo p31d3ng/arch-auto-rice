@@ -72,6 +72,10 @@ func replaceFile(fileLoc, configLoc string) {
 }
 
 func insertContentToJSON(fileLoc, configLoc string, inline bool) string {
+	if _, err := os.Stat(configLoc); os.IsNotExist(err) {
+		replaceFile(fileLoc, configLoc)
+		return ""
+	}
 	var appendContent []interface{}
 	bf, err := ioutil.ReadFile(fileLoc)
 	check(err, "while reading "+fileLoc)
