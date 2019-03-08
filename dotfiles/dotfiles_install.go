@@ -49,6 +49,7 @@ func main() {
 
 	for _, item := range actionItems {
 		fileLoc := pwd + "/files/" + item.RefLoc
+		runBash("bash", "-c", fmt.Sprintf("mkdir -p $(dirname %v)", item.ConfigLoc))
 		switch action := item.Action; action {
 		case "append":
 			appendToFile(fileLoc, item.ConfigLoc)
@@ -63,12 +64,10 @@ func main() {
 }
 
 func appendToFile(fileLoc, configLoc string) {
-	runBash("bash", "-c", fmt.Sprintf("mkdir -p $(dirname %v)", configLoc))
 	runBash("bash", "-c", fmt.Sprintf("cat %v >> %v", fileLoc, configLoc))
 }
 
 func replaceFile(fileLoc, configLoc string) {
-	runBash("bash", "-c", fmt.Sprintf("mkdir -p $(dirname %v)", configLoc))
 	runBash("bash", "-c", fmt.Sprintf("cp %v %v", fileLoc, configLoc))
 }
 
