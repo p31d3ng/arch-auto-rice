@@ -47,7 +47,7 @@ func main() {
 	var actionItems []actionItem
 	err = yaml.Unmarshal(b, &actionItems)
 	check(err, "Cannot unmarshall yaml config")
-	isVM, _ := runBash("bash", "-c", "sudo facteirs_virtual > /dev/null")
+	isVM, _ := runBash("bash", "-c", "sudo facter_virtual > /dev/null")
 	for _, item := range actionItems {
 		if isVM == "true" && item.SkipForVM {
 			continue
