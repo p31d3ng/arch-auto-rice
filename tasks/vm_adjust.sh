@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if $(facter is_virtual); then
+if $(sudo facter is_virtual); then
     echo "You're running in VM, remove dpi overrides"
     sed -i -e '/dpi/d' $1/Xresources
     sed -i -e '/dpi/d' $1/rofi_config.rasi

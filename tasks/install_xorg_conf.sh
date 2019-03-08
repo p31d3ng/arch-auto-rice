@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if $(facter is_virtual); then
+if $(sudo facter is_virtual); then
     echo "In VM, skipping xorg configs"
 else
     if [[ -f /usr/share/X11/xorg.conf.d/20-intel.conf ]]; then
