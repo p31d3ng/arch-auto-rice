@@ -66,13 +66,13 @@ func main() {
 func appendToFile(fileLoc, configLoc string) {
 	dirname := filepath.Dir(configLoc)
 	os.MkdirAll(dirname, 0755)
-	runBash("cat", fileLoc, ">>", configLoc)
+	runBash("bash", "-c", fmt.Sprintf("cat %v >> %v", fileLoc, configLoc))
 }
 
 func replaceFile(fileLoc, configLoc string) {
 	dirname := filepath.Dir(configLoc)
 	os.MkdirAll(dirname, 0755)
-	runBash("cp", "-r", fileLoc, configLoc)
+	runBash("bash", "-c", fmt.Sprintf("cp %v %v", fileLoc, configLoc))
 }
 
 func insertContentToJSON(fileLoc, configLoc string, inline bool) string {
