@@ -69,7 +69,7 @@
 
 - name: dpi-adjust
   description: remove dpi settings if not 4K
-  enable: false # has to run under GUI env
+  enable: true # has to run under GUI env though
   depends:
     - optional-official-pkgs
   scripts:
