@@ -1,12 +1,14 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
+	"strings"
 
 	"gopkg.in/yaml.v2"
 )
@@ -48,23 +50,47 @@ func main() {
 		fileLoc := pwd + "/files/" + item.RefLoc
 		switch action := item.Action; action {
 		case "append":
-			runBash("ls", "-l", fileLoc)
+			appendToFile(fileLoc, item.ConfigLoc)
+		case "replace":
+			replaceFile(fileLoc, item.ConfigLoc)
+		case "insert_json":
+			insertContentToJSON(fileLoc, item.ConfigLoc)
 		}
 	}
 }
 
-func runBash(cmdStr string, params ...string) {
+func appendToFile(fileLoc, configLoc string) {
+	runBash("cat", fileLoc, ">>", configLoc)
+}
+
+func replaceFile(fileLoc, configLoc string) {
+	runBash("cp", "-r", fileLoc, configLoc)
+}
+
+func insertContentToJSON(fileLoc, configLoc string) {
+	fmt.Println(fileLoc, configLoc)
+}
+
+func runBash(cmdStr string, params ...string) (string, string) {
 	var cmd *exec.Cmd
 	cmd = exec.Command(cmdStr, params...)
 	stdout, _ := cmd.StdoutPipe()
 	stderr, _ := cmd.StderrPipe()
+	var stdoutBuffer bytes.Buffer
+	var stderrBuffer bytes.Buffer
+	stdoutWriter := io.MultiWriter(os.Stdout, &stdoutBuffer)
+	stderrWriter := io.MultiWriter(os.Stderr, &stderrBuffer)
+
 	err := cmd.Start()
 	check(err, "In "+cmdStr)
 
-	go io.Copy(os.Stdout, stdout)
-	go io.Copy(os.Stderr, stderr)
-	err = cmd.Wait()
+	go io.Copy(stdoutWriter, stdout)
+	go io.Copy(stderrWriter, stderr)
+
+	err = cmd.Wait() // by the time cmd finished, stdoutBuffer/stderrBuffer is filled
 	check(err, "In "+cmdStr)
+
+	return strings.TrimSuffix(stdoutBuffer.String(), "\n"), strings.TrimSuffix(stderrBuffer.String(), "\n")
 }
 
 func printUsage() {
