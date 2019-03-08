@@ -1,4 +1,9 @@
 #!/bin/bash
+xdpyinfo &> /dev/null
+if [[ "$?" -gt 0 ]]; then
+    echo "Cannot open xdpinfo, skipping the setup for now"
+    return
+fi
 
 if [[ $(xdpyinfo | grep dimensions | awk '/[0-9]+x[0-9]+/{print $2}') = "3840x2160" ]]; then
     echo "You're using 4K screen, keeping dpi as 220"

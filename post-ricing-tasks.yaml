@@ -16,26 +16,6 @@
       params:
         - "packages/optional-aur-packages"
 
-- name: dpi-adjust
-  description: remove dpi settings if not 4K
-  enable: true
-  depends:
-    - optional-official-pkgs
-  scripts:
-    - loc: "tasks/dpi_adjust.sh"
-      params:
-        - "dotfiles/files"
-
-- name: xorg-config
-  description: install xorg config for my laptop
-  enable: true
-  depends:
-    - optional-official-pkgs
-  scripts:
-    - loc: "tasks/install_xorg_conf.sh"
-      params:
-        - "xorg.conf.d/"
-
 - name: "fish-deps"
   description: install oh-my-fish and config fish shell
   enable: true
@@ -86,3 +66,23 @@
     - loc: "tasks/install_vscode_exts.sh"
       params:
         - "packages/vscode-exts"
+
+- name: dpi-adjust
+  description: remove dpi settings if not 4K
+  enable: false # has to run under GUI env
+  depends:
+    - optional-official-pkgs
+  scripts:
+    - loc: "tasks/dpi_adjust.sh"
+      params:
+        - "dotfiles/files"
+
+- name: xorg-config
+  description: install xorg config for my laptop
+  enable: false # better to run it manually
+  depends:
+    - optional-official-pkgs
+  scripts:
+    - loc: "tasks/install_xorg_conf.sh"
+      params:
+        - "xorg.conf.d/"
