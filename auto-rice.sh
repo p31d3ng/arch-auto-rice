@@ -72,6 +72,7 @@ echo "Congratulation! auto-ricing finished!"
 read -p "Do you want to proceed to install/config optional packages? (Y/n): " selection
 echo "----------------------------------------------------------------------"
 
+chown -R ${username} /tmp/arch-auto-rice
 if [[ $(echo "$selection" | tr '[:upper:]' '[:lower:]') = "y" ]]; then
 	# install config files via go script
 	git pull
