@@ -63,10 +63,12 @@ func main() {
 }
 
 func appendToFile(fileLoc, configLoc string) {
+	runBash("mkdir", "-p", "$(dirname "+"configLoc)")
 	runBash("cat", fileLoc, ">>", configLoc)
 }
 
 func replaceFile(fileLoc, configLoc string) {
+	runBash("mkdir", "-p", "$(dirname "+"configLoc)")
 	runBash("cp", "-r", fileLoc, configLoc)
 }
 
@@ -108,13 +110,13 @@ func runBash(cmdStr string, params ...string) (string, string) {
 	stderrWriter := io.MultiWriter(os.Stderr, &stderrBuffer)
 
 	err := cmd.Start()
-	check(err, "In "+cmdStr)
+	check(err, "In "+strings.Join(cmd.Args, " "))
 
 	go io.Copy(stdoutWriter, stdout)
 	go io.Copy(stderrWriter, stderr)
 
 	err = cmd.Wait() // by the time cmd finished, stdoutBuffer/stderrBuffer is filled
-	check(err, "In "+cmdStr)
+	check(err, "In "+strings.Join(cmd.Args, " "))
 
 	return strings.TrimSuffix(stdoutBuffer.String(), "\n"), strings.TrimSuffix(stderrBuffer.String(), "\n")
 }
