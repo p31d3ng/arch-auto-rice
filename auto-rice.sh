@@ -58,11 +58,11 @@ cd ..
 su -c "yay -Syu --noconfirm" ${username}
 
 # clone the main repo
-git clone https://github.com/p31d3ng/arch-auto-rice.git
+su -c "git clone https://github.com/p31d3ng/arch-auto-rice.git" ${username}
 cd arch-auto-rice
 
 # install required packages
-su -c "pacman -S $(cat ./packages/required-official-packages | tr '\n' ' ') --noconfirm --needed" ${username}
+pacman -S $(cat ./packages/required-official-packages | tr '\n' ' ') --noconfirm --needed
 su -c "yay -S $(cat ./packages/required-aur-packages | tr '\n' ' ') --noconfirm" ${username}
 su -c "go get -u gopkg.in/yaml.v2" ${username}
 
