@@ -7,14 +7,14 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer)
 
 - go
 - python3 & pip3
-- i3-gaps
-- polybar
-- rofi
+- i3-gaps (window manager)
+- polybar (status bar)
+- rofi (app launcher)
 - ttf-font-awesome
-- nitrogen
+- feh (image viewer and desktop background)
 - adobe-source-code-pro-fonts
-- rxvt-unicode
-- lxdm
+- rxvt-unicode (terminal)
+- lxdm (login manager)
 
 ## Optional Dev Apps
 
@@ -24,7 +24,8 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer)
 
 ## To-Do
 
-- [ ] nitrogen wallpaper
+- [ ] i3lock
+- [ ] lxdm config
 - [ ] Xresources file
 - [ ] Browsers (Chrome & Firefox)
 - [ ] go tool to change theme like i3wm-themer

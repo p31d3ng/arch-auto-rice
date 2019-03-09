@@ -75,12 +75,7 @@
   config_loc: ~/.vimrc
   ref_loc: vimrc
 
-- name: "nitrogen-image"
+- name: "wallpaper-image"
   action: replace
-  config_loc: ~/.config/nitrogen/004.png
+  config_loc: ~/.config/wallpapers/004.png
   ref_loc: 004.png
-
-- name: "nitrogen-config"
-  action: replace
-  config_loc: ~/.config/nitrogen/bg-saved.cfg
-  ref_loc: nitrogen-bg-saved.cfg
