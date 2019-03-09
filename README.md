@@ -25,7 +25,6 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer)
 ## To-Do
 
 - [ ] Xresources file
-- [ ] script to put all configs in place based on VM or Laptop
 - [ ] VS Code configs for Go dev env
 - [ ] Browsers (Chrome & Firefox)
 - [ ] go tool to change theme like i3wm-themer
