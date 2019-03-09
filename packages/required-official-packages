@@ -4,6 +4,10 @@ xorg-server
 xorg-xrdb
 xorg-xrandr
 xorg-xmodmap
+xorg-xdpyinfo
+xorg-xbacklight
+networkmanager
+xfce4-power-manager
 i3-gaps
 nitrogen
 rxvt-unicode
