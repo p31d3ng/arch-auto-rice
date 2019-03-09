@@ -37,20 +37,6 @@
       params:
         - "packages/omf-packages"
 
-- name: "dotfiles-install"
-  description: install dotfiles to correct location
-  enable: true
-  depends:
-    - optional-official-pkgs
-    - optional-aur-pkgs
-    - vm-adjust
-  scripts:
-    - loc: "tasks/install_dotfiles.sh"
-      params:
-        - "dotfiles/"
-        - "dotfiles_install.go"
-        - "config.yaml"
-
 - name: "vscode-go-deps"
   description: install dependencies for vscode go ext
   enable: true
@@ -58,14 +44,6 @@
     - loc: "tasks/install_vscode_go_deps.sh"
       params:
         - "packages/go-packages"
-
-- name: "vim-vundle"
-  description: Install Vundle and vimrc
-  enable: true
-  depends:
-    - dotfiles-install
-  scripts:
-    - loc: "tasks/install_vim_vundle.sh"
 
 - name: "vscode-exts"
   description: install extentions for VS Code
@@ -86,6 +64,29 @@
     - loc: "tasks/dpi_adjust.sh"
       params:
         - "dotfiles/files"
+
+- name: "dotfiles-install"
+  description: install dotfiles to correct location
+  enable: true
+  depends:
+    - optional-official-pkgs
+    - optional-aur-pkgs
+    - vm-adjust
+    - dpi-adjust
+  scripts:
+    - loc: "tasks/install_dotfiles.sh"
+      params:
+        - "dotfiles/"
+        - "dotfiles_install.go"
+        - "config.yaml"
+
+- name: "vim-vundle"
+  description: Install Vundle and vimrc
+  enable: true
+  depends:
+    - dotfiles-install
+  scripts:
+    - loc: "tasks/install_vim_vundle.sh"
 
 - name: xorg-config
   description: install xorg config for my laptop
