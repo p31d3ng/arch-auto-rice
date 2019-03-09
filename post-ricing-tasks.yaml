@@ -20,7 +20,7 @@
   enable: true
   depends:
     - optional-official-pkgs
-    - optional-aur-pkgs     
+    - optional-aur-pkgs
   scripts:
     - loc: "tasks/vm_adjust.sh"
       params:
@@ -69,7 +69,7 @@
 
 - name: "vscode-exts"
   description: install extentions for VS Code
-  enable: false # has to run under GUI env
+  enable: true # has to run under GUI env
   depends:
     - optional-aur-pkgs
   scripts:
