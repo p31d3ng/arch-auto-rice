@@ -29,7 +29,7 @@ modules-center = date i3
 modules-right = alsa battery memory cpu temperature powermenu
 
 tray-position = right
-tray-maxsize = 45
+tray-maxsize = 32
 ;tray-padding =
 
 cursor-click = pointer
@@ -208,6 +208,7 @@ bar-used-empty-foreground = #444444
 
 [module/temperature]
 type = internal/temperature
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
 
 [settings]
 screenchange-reload = true
