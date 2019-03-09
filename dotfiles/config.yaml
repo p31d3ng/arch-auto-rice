@@ -45,6 +45,11 @@
   config_loc: ~/.config/polybar/config
   ref_loc: polybar_config
 
+- name: "polybar-launcher"
+  action: replace
+  config_loc: ~/.config/polybar/polybar_launcher.sh
+  ref_loc: polybar_launcher.sh
+
 - name: "rofi"
   action: replace
   config_loc: ~/.config/rofi/config.rasi
