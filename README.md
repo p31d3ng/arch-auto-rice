@@ -3,6 +3,10 @@
 This project is to bootstrap a fresh Arch Linux installation with all the basic tools I need.
 Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer), actually, I'm using 004 theme here :)
 
+## Usage
+
+`curl -L https://bit.ly/p31d3ng-ricing -o a.sh && sh a.sh`
+
 ## Customizations
 
 - Default shell is setting to fish while logging in.
@@ -55,7 +59,3 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer), actually, I'm
 ## To-Do
 
 - [ ] go tool to change theme like i3wm-themer
-
-## Usage
-
-`curl -L https://bit.ly/p31d3ng-ricing -o a.sh && sh a.sh`
