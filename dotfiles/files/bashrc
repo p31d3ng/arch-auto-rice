@@ -6,4 +6,7 @@ alias ll='ls -lF'
 alias la='ls -A'
 alias l='ls -CF'
 
-exec $(which fish) -l
+# setting fish shell as default without chsh
+fish_shell=$(which fish)
+export SHELL="${fish_shell}"
+exec "${fish_shell}" -l
