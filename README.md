@@ -14,7 +14,8 @@ After all installation, please reboot your machine! (or logout and log back in t
 
 ## Customizations (You can always disable them in YAML)
 
-- Default shell is setting to fish while logging in.b
+- The script will create a group whose members can run any sudo command without password.
+- Default shell is set to fish while logging in. (in .bashrc rather than using `chsh`)
 - Xmodmap for emulating HHKB layout! Once you go HHKB you'll never go back :)
 - Using my personal VIMRC which is minimal but with auto-completion.
 - Using Emacs keybinding in VS Code with some minor changes. Yes I'm using VIM + Emacs at the same time!
@@ -38,7 +39,7 @@ After all installation, please reboot your machine! (or logout and log back in t
 - You can add a new YAML list item to execute any script you want.
 - If nothing is at `scripts: - loc`, the task won't run
 - If `enable` is set to fasle, the task won't run
-- If dependencies are not finished correctly or not executed because of any reason, the task won't run
+- If dependent tasks are not executed because of any of the two reasons above, the task won't run
 
 #### `./dotfiles/config.yaml` for customized configurations for installed packages.
 
@@ -50,7 +51,7 @@ After all installation, please reboot your machine! (or logout and log back in t
   skip_for_vm: true  # optional field
 ```
 
-- supported actions are:
+- supported actions:
   - `replace`: it's actually a wrapper of `cp -r`
   - `append`: a wrapper of `cat file >> config`
   - `insert_json`: it will append content to and indent the artifact JSON file.

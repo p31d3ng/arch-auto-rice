@@ -66,7 +66,7 @@ pacman -S $(cat ./packages/required-official-packages | tr '\n' ' ') --noconfirm
 su -c "yay -S $(cat ./packages/required-aur-packages | tr '\n' ' ') --noconfirm" ${username}
 su -c "go get -u gopkg.in/yaml.v2" ${username}
 
-# create sudo user
+# Run post-ricing tasks
 echo "----------------------------------------------------------------------"
 echo "Congratulation! auto-ricing finished!"
 read -p "Do you want to proceed to install/config optional packages? (Y/n): " selection
