@@ -1,14 +1,14 @@
 # Auto-Ricing Arch Linux
 
-This project is to bootstrap a fresh Arch Linux installation with all the basic tools I need.
+This project is to bootstrap a fresh Arch Linux installation with all the basic tools I need.  
 Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer), actually, I'm using 004 theme here :)
 
 ## Usage
 
-`curl -L https://bit.ly/p31d3ng-ricing -o a.sh && sh a.sh`
+`curl -L https://bit.ly/p31d3ng-ricing -o a.sh && sh a.sh`  
 After all installation, please reboot your machine! (or logout and log back in then do `sudo systemctl start lxdm`)
 
-## Screenshot After Installation
+## Screenshots
 
 ![](./screenshot.png)
 
