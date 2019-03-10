@@ -6,12 +6,58 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer), actually, I'm
 ## Usage
 
 `curl -L https://bit.ly/p31d3ng-ricing -o a.sh && sh a.sh`
+After all installation, please reboot your machine! (or logout and log back in then do `sudo systemctl start lxdm`)
 
-## Customizations
+## Screenshot After Installation
 
-- Default shell is setting to fish while logging in.
+![](./screenshot.png)
+
+## Customizations (You can always disable them in YAML)
+
+- Default shell is setting to fish while logging in.b
 - Xmodmap for emulating HHKB layout! Once you go HHKB you'll never go back :)
+- Using my personal VIMRC which is minimal but with auto-completion.
 - Using Emacs keybinding in VS Code with some minor changes. Yes I'm using VIM + Emacs at the same time!
+
+### How to customize your own installation scripts
+
+#### `./post-ricing-tasks`
+
+```
+---Exmaple
+- name: "vscode-exts"
+  description: install extentions for VS Code
+  enable: true
+  depends: # optional field
+    - optional-aur-pkgs
+  scripts:
+    - loc: "tasks/install_vscode_exts.sh"
+      params:  # optional field
+        - "packages/vscode-exts"
+```
+
+- You can add a new YAML list item to execute any script you want.
+- If nothing is at `scripts: - loc`, the task won't run
+- If `enable` is set to fasle, the task won't run
+- If dependencies are not finished correctly or not executed because of any reason, the task won't run
+
+#### `dotfiles/config.yaml`
+
+```
+- name: "Xmodmap"
+  action: replace
+  config_loc: ~/.Xmodmap
+  ref_loc: Xmodmap
+  skip_for_vm: true  # optional field
+```
+
+- supported actions are:
+  - `replace`: it's actually a wrapper of `cp -r`
+  - `append`: a wrapper of `cat file >> config`
+  - `insert_json`: it will append content to and indent the artifact JSON file.
+- `config_loc`: the (config) file that need to be changed or overwritten
+- `ref_loc`: location for your custom config file, the base folder is `dotfiles/files`
+- `skip_for_vm`: if set to true, the task will not run while in virtual machine
 
 ## Packages to be installed
 
@@ -43,8 +89,8 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer), actually, I'm
 | Y         | ranger                      | File explorer which looks awesome                                                    | pacman |
 | Y         | feh                         | Image viewer, also for setting desktop background                                    | pacman |
 | Y         | polybar-git                 | status bar for i3 window manager                                                     | AUR    |
-| Y         | ttf-nerd-fonts-symbols      | font                                                                                 | AUR    |
-| Y         | pamac-tray-appindicator     | GUI for all installed packages                                                       | AU     |
+| Y         | ttf-nerd-fonts-symbols      | fonts                                                                                | AUR    |
+| Y         | pamac-tray-appindicator     | GUI for all installed packages                                                       | AUR    |
 | N         | facter                      | For summarize system hardware information                                            | pacman |
 | N         | zeal                        | Ofiicial documentation lookup tool for development                                   | pacman |
 | N         | fish                        | My favorite shell                                                                    | pacman |

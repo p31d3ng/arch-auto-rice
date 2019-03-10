@@ -53,7 +53,7 @@
 
 - name: "vscode-exts"
   description: install extentions for VS Code
-  enable: true # has to run under GUI env
+  enable: true
   depends:
     - optional-aur-pkgs
   scripts:
@@ -63,7 +63,7 @@
 
 - name: dpi-adjust
   description: remove dpi settings if not 4K
-  enable: true # has to run under GUI env though
+  enable: true
   depends:
     - optional-official-pkgs
   scripts:
