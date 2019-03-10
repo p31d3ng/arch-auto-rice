@@ -96,6 +96,7 @@ After all installation, please reboot your machine! (or logout and log back in t
 | N         | fish                        | My favorite shell                                                                    | pacman |
 | N         | VIM                         | Yeah I'm a VIM + Emacs user, VIM in terminal and VS Code + Emacs keybindings for dev | pacman |
 | N         | jq                          | Terminal JSON query tool                                                             | pacman |
+| N         | neofetch                    | show off boring system info                                                          | pacman |
 | N         | visual-studio-code-bin      | VS Code :) My personal favorite                                                      | AUR    |
 | N         | clipit                      | Pasteboard history management tool                                                   | AUR    |
 | N         | lxdm-themes                 | Making LXDM look better                                                              | AUR    |
