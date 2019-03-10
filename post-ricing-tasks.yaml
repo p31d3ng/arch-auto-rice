@@ -5,7 +5,7 @@
   scripts:
     - loc: "tasks/set_utf8_locale.sh"
 
-  - name: optional-official-pkgs
+- name: optional-official-pkgs
   description: install optional pkgs from pacman
   enable: true
   scripts:
