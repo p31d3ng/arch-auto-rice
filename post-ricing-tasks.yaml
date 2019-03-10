@@ -1,5 +1,11 @@
 ---
-- name: optional-official-pkgs
+- name: set-utf8-locale
+  description: setting utf8 as default locale
+  enable: true
+  scripts:
+    - loc: "tasks/set_utf8_locale.sh"
+
+  - name: optional-official-pkgs
   description: install optional pkgs from pacman
   enable: true
   scripts:
@@ -64,6 +70,14 @@
     - loc: "tasks/dpi_adjust.sh"
       params:
         - "dotfiles/files"
+
+- name: "lxdm-theme-change"
+  description: Changing LXDM theme to Archlinux
+  enable: true
+  depends:
+    - optional-aur-pkgs
+  scripts:
+    - loc: "tasks/change_lxdm_theme.sh"
 
 - name: "dotfiles-install"
   description: install dotfiles to correct location

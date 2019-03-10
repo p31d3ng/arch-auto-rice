@@ -5,3 +5,5 @@ export PATH=$PATH:$GOPATH/bin
 alias ll='ls -lF'
 alias la='ls -A'
 alias l='ls -CF'
+
+exec $(which fish) -l

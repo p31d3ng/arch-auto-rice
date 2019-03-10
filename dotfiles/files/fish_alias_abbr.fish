@@ -1,14 +1,14 @@
 #--------------------------------------------------------------------------
 # Docker
 #--------------------------------------------------------------------------
-abbr dl="docker ps -l -q"
-abbr dps="docker ps"
-abbr dpa="docker ps -a"
-abbr di="docker images"
-abbr dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
-abbr dkd="docker run -d -P"
-abbr dki="docker run -i -t -P"
-abbr dex="docker exec -i -t"
+abbr -a -g dl docker ps -l -q
+abbr -a -g dps docker ps
+abbr -a -g dpa docker ps -a
+abbr -a -g di docker images
+abbr -a -g dip docker inspect --format '{{ .NetworkSettings.IPAddress }}'
+abbr -a -g dkd docker run -d -P
+abbr -a -g dki docker run -i -t -P
+abbr -a -g dex docker exec -i -t
 
 function clean_docker
   docker rm (docker ps -aq -f status=exited)
@@ -22,28 +22,28 @@ end
 #--------------------------------------------------------------------------
 # Git
 #--------------------------------------------------------------------------
-abbr gcmsg='git commit -m'
-abbr gp='git push'
-abbr gd='git diff'
-abbr gaa='git add -A'
-abbr gst='git status'
+abbr -a -g gcmsg git commit -m
+abbr -a -g gp git push
+abbr -a -g gd git diff
+abbr -a -g gaa git add -A
+abbr -a -g gst git status
 
 #--------------------------------------------------------------------------
 # Kubernetes
 #--------------------------------------------------------------------------
-abbr kcg="kubectl config get-contexts"
-abbr kcu="kubectl config use-context"
-abbr kgp="kubectl get pods"
-abbr kgd="kubectl get deployments"
-abbr kgs="kubectl get services"
-abbr klf="kubectl logs -f"
-abbr klft="kubectl logs -f --tail"
+abbr -a -g kcg kubectl config get-contexts
+abbr -a -g kcu kubectl config use-context
+abbr -a -g kgp kubectl get pods
+abbr -a -g kgd kubectl get deployments
+abbr -a -g kgs kubectl get services
+abbr -a -g klf kubectl logs -f
+abbr -a -g klft kubectl logs -f --tail
 function kssh
   kubectl exec -it $argv -- /bin/bash
 end
-abbr kdp="kubectl describe pod"
-abbr kds="kubectl describe svc"
-abbr kdd="kubectl describe deployment"
+abbr -a -g kdp kubectl describe pod
+abbr -a -g kds kubectl describe svc
+abbr -a -g kdd kubectl describe deployment
 
 #--------------------------------------------------------------------------
 # Misc

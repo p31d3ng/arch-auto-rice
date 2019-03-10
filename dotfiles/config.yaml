@@ -79,3 +79,8 @@
   action: replace
   config_loc: ~/.config/wallpapers/004.png
   ref_loc: 004.png
+
+- name: "i3exit"
+  action: replace
+  config_loc: ~/.config/i3/i3exit.sh
+  ref_loc: i3exit.sh
