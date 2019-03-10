@@ -19,12 +19,11 @@ After all installation, please reboot your machine! (or logout and log back in t
 - Using my personal VIMRC which is minimal but with auto-completion.
 - Using Emacs keybinding in VS Code with some minor changes. Yes I'm using VIM + Emacs at the same time!
 
-### How to customize your own installation scripts
+### How to customize your own installation scripts (YAML based config system)
 
-#### `./post-ricing-tasks`
+#### `./post-ricing-tasks.yaml` for running post-ricing tasks.
 
 ```
----Exmaple
 - name: "vscode-exts"
   description: install extentions for VS Code
   enable: true
@@ -41,7 +40,7 @@ After all installation, please reboot your machine! (or logout and log back in t
 - If `enable` is set to fasle, the task won't run
 - If dependencies are not finished correctly or not executed because of any reason, the task won't run
 
-#### `dotfiles/config.yaml`
+#### `./dotfiles/config.yaml` for customized configurations for installed packages.
 
 ```
 - name: "Xmodmap"
