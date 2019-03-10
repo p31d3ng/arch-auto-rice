@@ -101,6 +101,7 @@ After all installation, please reboot your machine! (or logout and log back in t
 | N         | lxdm-themes                 | Making LXDM look better                                                              | AUR    |
 | N         | firefox                     | browser, basically for DNS-over-HTTPS                                                | AUR    |
 | N         | google-chrome               | browser, since firefox does NOT honor gtk keybindings anymore                        | AUR    |
+| N         | i3lock-fancy                | A fork of i3 lock, using blur background instead of images                           | AUR    |
 
 ## To-Do
 
