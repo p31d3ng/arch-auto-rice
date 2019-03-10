@@ -20,12 +20,14 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer)
 
 - VS Code
 - Fish shell & Oh My Fish
+- Zeal
+- Clipit
+- Chrome
+- Firefox
+- i3lock-fancy
 
 ## To-Do
 
-- [ ] i3lock
-- [ ] lxdm config
-- [ ] Browsers (Chrome & Firefox)
 - [ ] go tool to change theme like i3wm-themer
 
 ## Usage
