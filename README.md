@@ -19,14 +19,12 @@ Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer)
 ## Optional Dev Apps
 
 - VS Code
-- Fish shell
-- Oh My Fish
+- Fish shell & Oh My Fish
 
 ## To-Do
 
 - [ ] i3lock
 - [ ] lxdm config
-- [ ] Xresources file
 - [ ] Browsers (Chrome & Firefox)
 - [ ] go tool to change theme like i3wm-themer
 
