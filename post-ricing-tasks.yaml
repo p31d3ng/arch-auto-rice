@@ -102,6 +102,14 @@
   scripts:
     - loc: "tasks/install_vim_vundle.sh"
 
+- name: "non-latin-fonts"
+  description: Install Non-latin fonts
+  enable: true
+  scripts:
+    - loc: "tasks/install_non-latin-fonts.sh"
+      params:
+        - "packages/non-latin-fonts"
+
 - name: xorg-config
   description: install xorg config for my laptop
   enable: false # better to run it manually
