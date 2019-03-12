@@ -208,7 +208,7 @@ bar-used-empty-foreground = #444444
 
 [module/temperature]
 type = internal/temperature
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
 
 [settings]
 screenchange-reload = true
