@@ -9,3 +9,4 @@ xf86-video-intel
 alsa-utils
 xorg-xev
 pulseaudio-alsa
+arc-gtk-theme

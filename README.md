@@ -102,6 +102,7 @@ After all installation, please reboot your machine! (or logout and log back in t
 | N         | alsa-util                   | sound drivers and amixer to adjust volume                                            | pacman |
 | N         | xorg-xev                    | check keycode                                                                        | pacman |
 | N         | pulseaudio-alsa             | Pulse Audio driver to toggle unmute                                                  | pacman |
+| N         | arc-gtk-theme               | themes, basically for Arc-Dark                                                       | pacman |
 | N         | visual-studio-code-bin      | VS Code :) My personal favorite                                                      | AUR    |
 | N         | clipit                      | Pasteboard history management tool                                                   | AUR    |
 | N         | lxdm-themes                 | Making LXDM look better                                                              | AUR    |
