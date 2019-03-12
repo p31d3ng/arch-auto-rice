@@ -110,6 +110,15 @@
       params:
         - "packages/non-latin-fonts-official"
 
+- name: "fcitx-im"
+  description: Install fcitx input methods
+  enable: true
+  scripts:
+    - loc: "tasks/install_optional_official_pkgs.sh"
+      params:
+        - "packages/fcitx-im-pkgs"
+    - loc: "tasks/autostart_fcitx_i3.sh"
+
 - name: xorg-config
   description: install xorg config for my laptop
   enable: false # better to run it manually
