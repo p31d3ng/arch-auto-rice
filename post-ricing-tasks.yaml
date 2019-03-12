@@ -21,6 +21,14 @@
       params:
         - "packages/optional-aur-packages"
 
+- name: drivers-install
+  description: install drivers for graphics, and audio
+  enable: true
+  scripts:
+    - loc: "tasks/install_optional_official_pkgs.sh"
+      params:
+        - "packages/drivers"
+
 - name: vm-adjust
   description: adjust settings if running the script in virtual machine
   enable: true

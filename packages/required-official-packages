@@ -1,12 +1,14 @@
 python
 python-pip
 xorg-server
+xorg-xev
 xorg-xrdb
 xorg-xrandr
 xorg-xmodmap
 xorg-xdpyinfo
 xorg-xbacklight
 networkmanager
+network-manager-applet
 xfce4-power-manager
 i3-gaps
 rofi
