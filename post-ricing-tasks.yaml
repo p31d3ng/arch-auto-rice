@@ -106,9 +106,9 @@
   description: Install Non-latin fonts
   enable: true
   scripts:
-    - loc: "tasks/install_non-latin-fonts.sh"
+    - loc: "tasks/install_optional_official_pkgs.sh"
       params:
-        - "packages/non-latin-fonts"
+        - "packages/non-latin-fonts-official"
 
 - name: xorg-config
   description: install xorg config for my laptop
