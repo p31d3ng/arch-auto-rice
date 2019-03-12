@@ -103,6 +103,7 @@ After all installation, please reboot your machine! (or logout and log back in t
 | N         | xorg-xev                    | check keycode                                                                        | pacman |
 | N         | pulseaudio-alsa             | Pulse Audio driver to toggle unmute                                                  | pacman |
 | N         | arc-gtk-theme               | themes, basically for Arc-Dark                                                       | pacman |
+| N         | openssh                     | OpenSSH, you know, nothing fancy                                                     | pacman |
 | N         | visual-studio-code-bin      | VS Code :) My personal favorite                                                      | AUR    |
 | N         | clipit                      | Pasteboard history management tool                                                   | AUR    |
 | N         | lxdm-themes                 | Making LXDM look better                                                              | AUR    |
