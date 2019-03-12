@@ -97,6 +97,11 @@ After all installation, please reboot your machine! (or logout and log back in t
 | N         | VIM                         | Yeah I'm a VIM + Emacs user, VIM in terminal and VS Code + Emacs keybindings for dev | pacman |
 | N         | jq                          | Terminal JSON query tool                                                             | pacman |
 | N         | neofetch                    | show off boring system info                                                          | pacman |
+| N         | network-manager-applet      | status bar for network manager                                                       | pacman |
+| N         | xf86-video-intel            | intel driver for Xorg (for backlight control)                                        | pacman |
+| N         | alsa-util                   | sound drivers and amixer to adjust volume                                            | pacman |
+| N         | xorg-xev                    | check keycode                                                                        | pacman |
+| N         | pulseaudio-alsa             | Pulse Audio driver to toggle unmute                                                  | pacman |
 | N         | visual-studio-code-bin      | VS Code :) My personal favorite                                                      | AUR    |
 | N         | clipit                      | Pasteboard history management tool                                                   | AUR    |
 | N         | lxdm-themes                 | Making LXDM look better                                                              | AUR    |

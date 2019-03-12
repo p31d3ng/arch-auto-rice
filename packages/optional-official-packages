@@ -4,3 +4,8 @@ fish
 vim
 jq
 neofetch
+network-manager-applet
+xf86-video-intel
+alsa-utils
+xorg-xev
+pulseaudio-alsa

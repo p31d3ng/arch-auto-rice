@@ -170,8 +170,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 # volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2dB- unmute
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 2%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 2%- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master toggle
 
 # Set shut down, restart and locking features
