@@ -13,7 +13,7 @@ case "$1" in
         ;;
     suspend)
         #lock && systemctl supend
-        systemctl supend
+        systemctl suspend
         ;;
     hibernate)
         #lock && systemctl hibernate
