@@ -127,6 +127,12 @@
         - "packages/fcitx-im-pkgs"
     - loc: "tasks/autostart_fcitx_i3.sh"
 
+- name: "hibernate-into-swap"
+  description: Set swap partition as hibernate location
+  enable: true
+  scripts:
+    - loc: "tasks/enable_swap_hibernation.sh"
+
 - name: xorg-config
   description: install xorg config for my laptop
   enable: false # better to run it manually
