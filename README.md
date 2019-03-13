@@ -104,12 +104,13 @@ After all installation, please reboot your machine! (or logout and log back in t
 | N         | pulseaudio-alsa             | Pulse Audio driver to toggle unmute                                                  | pacman |
 | N         | arc-gtk-theme               | themes, basically for Arc-Dark                                                       | pacman |
 | N         | openssh                     | OpenSSH, you know, nothing fancy                                                     | pacman |
+| N         | i3lock                | i3lock for locking screen                           | pacman    |
 | N         | visual-studio-code-bin      | VS Code :) My personal favorite                                                      | AUR    |
 | N         | clipit                      | Pasteboard history management tool                                                   | AUR    |
 | N         | lxdm-themes                 | Making LXDM look better                                                              | AUR    |
 | N         | firefox                     | browser, basically for DNS-over-HTTPS                                                | AUR    |
 | N         | google-chrome               | browser, since firefox does NOT honor gtk keybindings anymore                        | AUR    |
-| N         | i3lock-fancy                | A fork of i3 lock, using blur background instead of images                           | AUR    |
+
 
 ## To-Do
 
