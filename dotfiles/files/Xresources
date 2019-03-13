@@ -30,6 +30,7 @@ URxvt*cursorBlink:                true
 URxvt*saveLines:                  5000
 URxvt*internalBorder: 5
 URxvt*geometry: 70x19
+URxvt.letterSpace: 1
 
 rofi.color-enabled: true
 rofi.color-window: #1d1e26, #b5bd68, #b5bd68
