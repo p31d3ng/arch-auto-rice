@@ -43,12 +43,6 @@
   },
   {
     "key": "ctrl+alt+t",
-    "command": "workbench.action.terminal.focus",
-    "when": "editorFocus"
-  },
-  {
-    "key": "ctrl+alt+t",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
+    "command": "workbench.action.terminal.toggleTerminal"
   }
 ]
