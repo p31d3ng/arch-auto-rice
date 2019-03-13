@@ -1,5 +1,3 @@
-[
-    {
-        "keyboard.dispatch": "keyCode"
-    }
-]
+{
+    "keyboard.dispatch": "keyCode"
+}
