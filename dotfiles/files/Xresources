@@ -22,7 +22,7 @@ Xft.dpi: 220
 *color15:                         #E8E8E8
 
 URxvt*transparent:                true
-URxvt.font: xft:DejaVu Sans Mono:size=10:antialias=true
+URxvt.font: xft:DejaVu Sans Mono:size=10:antialias=true, xft: Noto Emoji
 URxvt.shading:                    32
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
@@ -30,7 +30,6 @@ URxvt*cursorBlink:                true
 URxvt*saveLines:                  5000
 URxvt*internalBorder: 5
 URxvt*geometry: 70x19
-URxvt.letterSpace: 1
 
 rofi.color-enabled: true
 rofi.color-window: #1d1e26, #b5bd68, #b5bd68
