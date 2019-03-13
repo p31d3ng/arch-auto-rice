@@ -1,7 +1,7 @@
 #!/bin/sh
 lock() {
-    #i3lock -c 222222
-    i3lock-fancy -t "LEAVE ME ALONE"
+    i3lock -c 222222
+    # i3lock-fancy -t "LEAVE ME ALONE"
 }
 
 case "$1" in
