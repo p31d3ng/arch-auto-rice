@@ -82,5 +82,5 @@
 
 - name: "i3exit"
   action: replace
-  config_loc: ~/.config/i3/i3exit.sh
+  config_loc: ~/.config/i3/i3exit
   ref_loc: i3exit.sh
