@@ -61,7 +61,7 @@
   ref_loc: vscode_keybindings.json
 
 - name: "vscode-settings"
-  action: insert_json
+  action: replace
   config_loc: ~/.config/Code/User/settings.json
   ref_loc: vscode_settings.json
 
