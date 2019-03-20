@@ -44,6 +44,10 @@ end
 abbr -a -g kdp kubectl describe pod
 abbr -a -g kds kubectl describe svc
 abbr -a -g kdd kubectl describe deployment
+abbr -a -g kd kubectl describe
+abbr -a -g ke kubectl edit
+abbr -a -g kg kubectl get
+abbr -a -g kdel kubectl delete
 
 #--------------------------------------------------------------------------
 # Misc
