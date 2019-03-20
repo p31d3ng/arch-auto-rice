@@ -48,6 +48,7 @@ abbr -a -g kd kubectl describe
 abbr -a -g ke kubectl edit
 abbr -a -g kg kubectl get
 abbr -a -g kdel kubectl delete
+abbr -a -g kcf kubectl create -f
 
 #--------------------------------------------------------------------------
 # Misc
