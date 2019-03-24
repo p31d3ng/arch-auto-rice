@@ -4,6 +4,7 @@ height = 48
 radius = 0
 fixed-center = true
 dpi = 220
+monitor = ${env:MONITOR:}
 
 background = #1d1e26
 foreground = #b0b287
@@ -87,7 +88,7 @@ ramp-signal-foreground = #1d1e26
 
 [module/eth]
 type = internal/network
-interface = enp0s3
+interface = wlp107s0
 interval = 3.0
 
 format-connected-padding = 2
@@ -213,6 +214,7 @@ hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
 
 [settings]
 screenchange-reload = true
+
 [global/wm]
 margin-top = 0
 margin-bottom = 0
