@@ -152,6 +152,13 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="Zeal"] floating enable border pixel 1
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [class="Thunar"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -170,8 +177,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 
 # volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 2%+ unmute
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 2%- unmute
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 2%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 2%- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master toggle
 
 # Set shut down, restart and locking features
@@ -218,10 +225,11 @@ mode "resize" {
 # Autostart applications
 exec --no-startup-id feh --bg-scale ~/.config/wallpapers/004.png
 exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec_always --no-startup-id fix_xcursor
+# exec_always --no-startup-id fcitx-autostart
 exec_always --no-startup-id ~/.config/polybar/polybar_launcher.sh
 
 # Theme colors
