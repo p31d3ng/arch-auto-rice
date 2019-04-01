@@ -22,7 +22,7 @@ Xft.dpi: 220
 *color15:                         #E8E8E8
 
 URxvt*transparent:                true
-URxvt.font: xft:DejaVu Sans Mono:size=10:antialias=true, xft: Noto Emoji
+URxvt.font: xft:DejaVu Sans Mono:size=10:antialias=true, xft:Noto Emoji
 URxvt.shading:                    32
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
@@ -46,3 +46,5 @@ rofi.columns: 2
 rofi.padding: 5
 rofi.fixed-num-lines: true
 rofi.hide-scrollbar: true
+rofi.run-command: fish -c '{cmd}'
+rofi.run-list-command: 'fish -c functions'

@@ -84,3 +84,8 @@
   action: replace
   config_loc: ~/.config/i3/i3exit
   ref_loc: i3exit.sh
+
+- name: "fish_emacs_conf"
+  action: replace
+  config_loc: ~/.config/fish/conf.d/emacs.fish
+  ref_loc: fish_emacs.fish
