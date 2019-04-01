@@ -67,8 +67,8 @@
 
 - name: "bashrc"
   action: append
-  config_loc: ~/.bashrc
-  ref_loc: bashrc
+  config_loc: ~/.bash_profile
+  ref_loc: bash_profile
 
 - name: "vimrc"
   action: replace
