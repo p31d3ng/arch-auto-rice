@@ -102,9 +102,18 @@
         - "dotfiles_install.go"
         - "config.yaml"
 
+- name: "emacs-d"
+  description: Install my emacs.d
+  enable: true # Please feel free to disable it
+  depends:
+    - vscode-go-deps
+    - dotfiles-install
+  scripts:
+    - loc: "tasks/install_emacs_d.sh"
+
 - name: "vim-vundle"
   description: Install Vundle and vimrc
-  enable: true
+  enable: true # Please feel free to disable it
   depends:
     - dotfiles-install
   scripts:
