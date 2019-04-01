@@ -15,7 +15,7 @@ After all installation, please reboot your machine! (or logout and log back in t
 ## Customizations (You can always disable them in YAML)
 
 - The script will create a group whose members can run any sudo command without password.
-- Default shell is set to fish while logging in. (in .bashrc rather than using `chsh`)
+- Default shell is BASH, but `chsh -s $(which fish)` is highly recommended after installation
 - Xmodmap for emulating HHKB layout! Once you go HHKB you'll never go back :)
 - Using my personal VIMRC which is minimal but with auto-completion.
 - Using Emacs keybinding in VS Code with some minor changes. Yes I'm using VIM + Emacs at the same time!
@@ -105,12 +105,15 @@ After all installation, please reboot your machine! (or logout and log back in t
 | N         | arc-gtk-theme               | themes, basically for Arc-Dark                                                       | pacman |
 | N         | openssh                     | OpenSSH, you know, nothing fancy                                                     | pacman |
 | N         | okular                      | Okular PDF/ePub reader                                                               | pacman |
+| N         | thunar                      | GUI file manager built on GTK2+                                                      | pacman |
+| N         | emacs                       | Well, you know, just emacs                                                           | pacman |
 | N         | i3lock                      | i3lock for locking screen                                                            | pacman |
 | N         | visual-studio-code-bin      | VS Code :) My personal favorite                                                      | AUR    |
 | N         | clipit                      | Pasteboard history management tool                                                   | AUR    |
 | N         | lxdm-themes                 | Making LXDM look better                                                              | AUR    |
 | N         | firefox                     | browser, basically for DNS-over-HTTPS                                                | AUR    |
 | N         | google-chrome               | browser, since firefox does NOT honor gtk keybindings anymore                        | AUR    |
+| N         | ttf-monaco                  | My default font in Emacs                                                             | AUR    |
 
 
 ## To-Do
