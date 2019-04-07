@@ -107,6 +107,7 @@ After all installation, please reboot your machine! (or logout and log back in t
 | N         | okular                      | Okular PDF/ePub reader                                                               | pacman |
 | N         | thunar                      | GUI file manager built on GTK2+                                                      | pacman |
 | N         | emacs                       | Well, you know, just emacs                                                           | pacman |
+| N         | dnsutils                    | DNS utils like nslookup and dig                                                      | pacman |
 | N         | i3lock                      | i3lock for locking screen                                                            | pacman |
 | N         | visual-studio-code-bin      | VS Code :) My personal favorite                                                      | AUR    |
 | N         | clipit                      | Pasteboard history management tool                                                   | AUR    |
