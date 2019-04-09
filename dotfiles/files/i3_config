@@ -225,7 +225,7 @@ mode "resize" {
 # Autostart applications
 exec --no-startup-id feh --bg-scale ~/.config/wallpapers/004.png
 exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec_always --no-startup-id fix_xcursor
