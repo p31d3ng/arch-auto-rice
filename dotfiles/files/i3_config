@@ -228,6 +228,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
+exec --no-startup-id xss-lock -- i3lock -n -c 222222
 exec_always --no-startup-id fix_xcursor
 # exec_always --no-startup-id fcitx-autostart
 exec_always --no-startup-id ~/.config/polybar/polybar_launcher.sh
