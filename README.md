@@ -109,7 +109,9 @@ After all installation, please reboot your machine! (or logout and log back in t
 | N         | emacs                       | Well, you know, just emacs                                                           | pacman |
 | N         | mosh                        | SSH client in UDP                                                                    | pacman |
 | N         | the_silver_searcher         | Well, you know, just emacs                                                           | pacman |
+| N         | dnsutils                    | DNS utils like nslookup and dig                                                      | pacman |
 | N         | i3lock                      | i3lock for locking screen                                                            | pacman |
+| N         | xss-lock                    | to handle suspend/hibernate behavior and start i3lock once recovered                 | pacman |
 | N         | visual-studio-code-bin      | VS Code :) My personal favorite                                                      | AUR    |
 | N         | clipit                      | Pasteboard history management tool                                                   | AUR    |
 | N         | lxdm-themes                 | Making LXDM look better                                                              | AUR    |

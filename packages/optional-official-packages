@@ -7,8 +7,10 @@ neofetch
 arc-gtk-theme
 openssh
 i3lock
+xss-lock
 okular
 thunar
 emacs
 mosh
 the_silver_searcher
+dnsutils
