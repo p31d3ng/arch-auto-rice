@@ -1,4 +1,4 @@
-# Auto-Ricing Arch Linux
+# Auto-Rice Arch Linux
 
 This project is to bootstrap a fresh Arch Linux installation with all the basic tools I need.  
 Inspired by [i3wm-themer](https://github.com/unix121/i3wm-themer), actually, I'm using 004 theme here :)
