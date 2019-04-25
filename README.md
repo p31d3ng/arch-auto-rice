@@ -78,7 +78,6 @@ After all installation, please reboot your machine! (or logout and log back in t
 | Y         | xorg-xdpinfo                | For determining current display resolution                                           | pacman |
 | Y         | xorg-xbacklight             | backlight control for laptops                                                        | pacman |
 | Y         | networkmanager              | For managing network connections                                                     | pacman |
-| Y         | xfce4-power-manager         | For log off/reboot/shutdown                                                          | pacman |
 | Y         | i3-gaps                     | i3 window managaer with gaps between windows                                         | pacman |
 | Y         | rofi                        | App quick lanucher like Mac Spotlight/Alfred                                         | pacman |
 | Y         | rxvt-unicode                | Terminal emulator                                                                    | pacman |

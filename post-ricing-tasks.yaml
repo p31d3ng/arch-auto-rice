@@ -142,6 +142,12 @@
   scripts:
     - loc: "tasks/enable_swap_hibernation.sh"
 
+- name: "setup-power-mgmt"
+  description: Setup logind.conf and sleep.conf to enable power management
+  enable: true
+  scripts:
+    - loc: "tasks/config_power_mgmt.sh"
+
 - name: xorg-config
   description: install xorg config for my laptop
   enable: false # better to run it manually

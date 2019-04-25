@@ -9,7 +9,6 @@ xorg-xdpyinfo
 xorg-xbacklight
 networkmanager
 network-manager-applet
-xfce4-power-manager
 i3-gaps
 rofi
 rxvt-unicode
