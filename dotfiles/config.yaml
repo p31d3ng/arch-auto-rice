@@ -75,6 +75,11 @@
   config_loc: ~/.vimrc
   ref_loc: vimrc
 
+- name: "tmux"
+  action: replace
+  config_loc: ~/.tmux.conf
+  ref_loc: tmux.conf
+
 - name: "wallpaper-image"
   action: replace
   config_loc: ~/.config/wallpapers/004.png
