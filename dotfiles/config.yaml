@@ -94,3 +94,8 @@
   action: replace
   config_loc: ~/.config/fish/conf.d/emacs.fish
   ref_loc: fish_emacs.fish
+
+- name: "compton_setup"
+  actino: replace
+  config_loc: ~/.config/i3/compton.conf
+  ref_loc: compton.conf

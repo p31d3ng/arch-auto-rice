@@ -173,8 +173,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # screen brightness control
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
 
 # volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 2%+ unmute
@@ -221,6 +221,7 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+exec_always --no-startup-id fcitx-autostart
 
 # Autostart applications
 exec --no-startup-id feh --bg-scale ~/.config/wallpapers/004.png
@@ -231,6 +232,7 @@ exec --no-startup-id xss-lock -- i3lock -n -c 222222
 exec_always --no-startup-id fix_xcursor
 # exec_always --no-startup-id fcitx-autostart
 exec_always --no-startup-id ~/.config/polybar/polybar_launcher.sh
+exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
 
 # Theme colors
 client.focused #b0b287 #1d1e26 #b0b287 #789073 #789073
