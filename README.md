@@ -76,6 +76,7 @@ After all installation, please reboot your machine! (or logout and log back in t
 | Y         | xorg-xrandr                 | For multi-monitor display and resolution adjustment                                  | pacman |
 | Y         | xorg-xmodmap                | For remapping keyboarding to my customized HHKB layout                               | pacman |
 | Y         | xorg-xdpinfo                | For determining current display resolution                                           | pacman |
+| Y         | xorg-xinput                  | For tweaking the xinput like touchpad                                               | pacman |
 | Y         | xorg-xbacklight             | backlight control for laptops                                                        | pacman |
 | Y         | networkmanager              | For managing network connections                                                     | pacman |
 | Y         | i3-gaps                     | i3 window managaer with gaps between windows                                         | pacman |

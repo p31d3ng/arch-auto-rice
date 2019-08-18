@@ -7,6 +7,7 @@ xorg-xrandr
 xorg-xmodmap
 xorg-xdpyinfo
 xorg-xbacklight
+xorg-xinput
 networkmanager
 network-manager-applet
 i3-gaps
