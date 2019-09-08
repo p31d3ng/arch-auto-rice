@@ -32,7 +32,7 @@
     "command": "editor.action.revealDeclaration"
   },
   {
-    "key": "ctrl+c ctrl+j",
+    "key": "alt+.",
     "command": "editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
@@ -44,5 +44,10 @@
   {
     "key": "ctrl+alt+t",
     "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+c ctrl+j",
+    "command": "editor.action.referenceSearch.trigger",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
   }
 ]
