@@ -51,11 +51,19 @@
     "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
   },
   {
-      "key": "ctrl+x n",
-      "command": "workbench.action.moveEditorToNextGroup"
+    "key": "ctrl+x n",
+    "command": "workbench.action.moveEditorToNextGroup"
   },
   {
-      "key": "ctrl+x p",
-      "command": "workbench.action.moveEditorToPreviousGroup"
+    "key": "ctrl+x p",
+    "command": "workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "key": "ctrl+x b",
+    "command": "-workbench.action.showAllEditors"
+  },
+  {
+    "key": "ctrl+x b",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
   }
 ]
