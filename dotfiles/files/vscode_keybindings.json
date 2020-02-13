@@ -49,5 +49,13 @@
     "key": "ctrl+c ctrl+j",
     "command": "editor.action.referenceSearch.trigger",
     "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+      "key": "ctrl+x n",
+      "command": "workbench.action.moveEditorToNextGroup"
+  },
+  {
+      "key": "ctrl+x p",
+      "command": "workbench.action.moveEditorToPreviousGroup"
   }
 ]
