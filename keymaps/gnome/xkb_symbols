@@ -1,0 +1,22 @@
+1888a1889,1909
+
+partial modifier_keys alphanumeric_keys
+xkb_symbols "pei" {
+  include "us(basic)"
+  name[Group1]= "English (PEI)";
+  key <BKSP> {         [       backslash,             bar ] };
+  key <BKSL> {         [       BackSpace,       BackSpace ] };
+  key <RTSH> {
+      type= "TWO_LEVEL",
+      symbols[Group1]= [           Alt_R,          Meta_R ]
+  };
+  key <LALT> {         [       Control_L, 	Control_L ] };
+  key <CAPS> {         [       Control_L ] };
+  key <LWIN> {         [           Alt_L,          Meta_L ] };
+  key <LCTL> {         [         Super_L ] };
+  modifier_map Mod4 { <LCTL> };
+  modifier_map Mod1 { <RTSH> };
+  modifier_map Control { <LALT> };
+  modifier_map Control { <CAPS> };
+  modifier_map Mod1 { <LWIN> };
+};
