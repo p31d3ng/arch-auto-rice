@@ -1,5 +1,3 @@
-1888a1889,1909
-
 partial modifier_keys alphanumeric_keys
 xkb_symbols "pei" {
   include "us(basic)"
@@ -14,7 +12,9 @@ xkb_symbols "pei" {
   key <CAPS> {         [       Control_L ] };
   key <LWIN> {         [           Alt_L,          Meta_L ] };
   key <LCTL> {         [         Super_L ] };
+  key <RALT> {         [         Super_R, 	  Super_R ] };
   modifier_map Mod4 { <LCTL> };
+  modifier_map Mod4 { <RALT> };
   modifier_map Mod1 { <RTSH> };
   modifier_map Control { <LALT> };
   modifier_map Control { <CAPS> };
