@@ -42,7 +42,7 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+alt+t",
+    "key": "ctrl+alt+a",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
@@ -65,5 +65,20 @@
   {
     "key": "ctrl+x b",
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.deleteWordLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "deleteWordLeft",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]
